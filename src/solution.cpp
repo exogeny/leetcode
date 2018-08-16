@@ -309,7 +309,7 @@ int Solution::romanToInt(string s)
     return sum;
 }
 
-string Solution::commonPrefix(string& left, string& right)
+string Solution::commonPrefix(string &left, string &right)
 {
     int minlength = min(left.size(), right.size());
     for (int i = 0; i < minlength; i++)
@@ -320,14 +320,14 @@ string Solution::commonPrefix(string& left, string& right)
     return left.substr(0, minlength);
 }
 
-string Solution::longestCommonPrefix(vector<string>& strs)
+string Solution::longestCommonPrefix(vector<string> &strs)
 {
     if (strs.size() == 0) return "";
 
     return longestCommonPrefix(strs, 0, strs.size() - 1);
 }
 
-string Solution::longestCommonPrefix(vector<string>& strs, int l, int r)
+string Solution::longestCommonPrefix(vector<string> &strs, int l, int r)
 {
     if (l == r) return strs[l];
     
@@ -359,4 +359,98 @@ bool Solution::isValid(string s)
     }
 
     return stack.size() == 0;
+}
+
+ListNode* Solution::mergeTwoLists(ListNode* l1, ListNode* l2)
+{
+    ListNode* result, * cur;
+    for (; l1 != NULL || l2 != NULL; )
+    {
+        ListNode* node;
+        if (!l2 || (l1 && l1->val < l2->val))
+        {
+            node = new ListNode(l1->val);
+            l1 = l1->next;
+        }
+        else
+        {
+            node = new ListNode(l2->val);
+            l2 = l2->next;
+        }
+        
+        if (result == NULL)
+            result = cur = node;
+        else
+        {
+            cur->next = node;
+            cur = cur->next;
+        }
+    }
+
+    return result;
+}
+
+int Solution::removeDuplicates(vector<int>& nums)
+{
+    if (nums.empty()) return 0;
+
+    int length = 0;
+    vector<int>::iterator curr = nums.begin();
+    vector<int>::iterator next = curr + 1;
+
+    while (next != nums.end())
+    {
+        if (*next != *curr)
+        {
+            nums[length] = *curr;
+            length++;
+            curr = next;
+        }
+        next++;
+    }
+    nums[length++] = *curr;
+
+    return length;
+}
+
+int Solution::removeElement(vector<int>& nums, int val)
+{
+    if (nums.empty()) return 0;
+
+    int length = 0;
+    vector<int>::iterator curr = nums.begin();
+
+    while (curr != nums.end())
+    {
+        if (*curr != val)
+            nums[length++] = *curr;
+        curr++;
+    }
+
+    return length;
+}
+
+int Solution::strStr(string haystack, string needle)
+{
+    if (needle.size() > haystack.size())
+        return -1;
+
+    int i, j;
+    int nsize = needle.size();
+
+    for (i = 0; i < haystack.size() - nsize; i++)
+    {
+        if (haystack[i] == needle[0])
+        {
+            for (j = 1; j < nsize; j++)
+            {
+                if (haystack[i + j] != needle[j])
+                    break;
+
+                if (j == nsize - 1)
+                    return i;
+            }
+        }
+    }
+    return -1;
 }

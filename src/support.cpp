@@ -4,6 +4,8 @@
 #include <vector>
 #include <algorithm>
 
+#include "support.h"
+
 using std::string;
 using std::vector;
 using std::stringstream;
@@ -18,13 +20,13 @@ double stringToDouble(string input)
     return stod(input);
 }
 
-void trimLeftTrailingSpaces(string &input) {
+void trimLeftTrailingSpaces(string& input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
         return !isspace(ch);
     }));
 }
 
-void trimRightTrailingSpaces(string &input) {
+void trimRightTrailingSpaces(string& input) {
     input.erase(find_if(input.rbegin(), input.rend(), [](int ch) {
         return !isspace(ch);
     }).base(), input.end());
@@ -43,4 +45,15 @@ vector<int> stringToIntegerVector(string input) {
         output.push_back(stoi(item));
     }
     return output;
+}
+
+void printList(ListNode* l)
+{
+    while (l)
+    {
+        std::cout << l-> val;
+        if (l->next)
+            std::cout << "->";
+        l = l->next;
+    }
 }

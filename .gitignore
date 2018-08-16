@@ -34,3 +34,6 @@
 # For vs & vscode
 .vscode/
 .vs/
+
+# For build Folder
+build/

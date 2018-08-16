@@ -11,28 +11,47 @@ using std::vector;
 struct ListNode
 {
     int val;
-    ListNode * next;
-    ListNode(int x) : val(x), next(NULL) { }
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
 };
 
-class Solution {
-private:
+class Solution
+{
+  private:
     inline int max(int i, int j) { return (i > j ? i : j); }
     inline int min(int i, int j) { return (i > j ? j : i); }
+
+    /**
+     * This function is write for getting the length of a list.
+     */
+    inline int getListLength(ListNode *l)
+    {
+        if (l == NULL)
+            return 0;
+        int length = 0;
+        while (l != NULL)
+        {
+            length++;
+            l = l->next;
+        }
+        return length;
+    }
+
     int expandAroundCenter(string s, int left, int right);
-    
+
     /**
      * This function is write for longest common prefix using 'divide and conquer'.
      */
-    string longestCommonPrefix(vector<string>& strs, int l, int r);
-public:
+    string longestCommonPrefix(vector<string> &strs, int l, int r);
+
+  public:
     int lengthOfLongestSubstring(string s);
-    vector<int> twoSum(vector<int>& nums, int target);
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
-    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2);
+    vector<int> twoSum(vector<int> &nums, int target);
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2);
+    double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2);
     string longestPalindrome(string s);
     int reverse(int x);
-    vector<vector<int>> threeSum(vector<int>& nums);
+    vector<vector<int>> threeSum(vector<int> &nums);
     double pow(double x, int n);
 
     /**
@@ -99,14 +118,14 @@ public:
      * 
      * https://leetcode.com/problems/longest-common-prefix/solution/
      */
-    string longestCommonPrefix(vector<string>& strs);
+    string longestCommonPrefix(vector<string> &strs);
 
     /**
      * This function is not a task, write for `longestCommonPrefix`.
      * Input the two strings, so we get the common prefix of the
      * two strings.
-     */ 
-    string commonPrefix(string& left, string& right);
+     */
+    string commonPrefix(string &left, string &right);
 
     /**
      * 20. Valid Parentheses
@@ -126,7 +145,80 @@ public:
      * Example 2:
      * Input: "([)]"
      * Output: false
+     * 
+     * https://leetcode.com/problems/valid-parentheses/description/
      */
     bool isValid(string s);
+
+    /**
+     * 21. Merge Two Sorted Lists
+     * 
+     * Merge two sorted linked lists and return it as a new list.
+     * The new list should be made by splicing together the nodes
+     * of the first two lists.
+     * 
+     * Example:
+     * Input: 1->2->4, 1->3->4
+     * Output: 1->1->2->3->4->4
+     * 
+     * https://leetcode.com/problems/merge-two-sorted-lists/description/
+     */
+    ListNode* mergeTwoLists(ListNode *l1, ListNode *l2);
+
+    /**
+     * 26. Remove Duplicates from Sorted Array
+     * 
+     * Given a sorted array nums, remove the duplicates in-place such
+     * that each element appear only once and return the new length.
+     * Do not allocate extra space for another array, you must do
+     * this by modifying the input array in-place with O(1) extra memory.
+     * 
+     * 
+     * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
+     */
+    int removeDuplicates(vector<int>& nums);
+
+    /**
+     * 27. Remove Element
+     * 
+     * Given an array nums and a value val, remove all instances of
+     * that value in-place and return the new length.
+     * Do not allocate extra space for another array, you must do
+     * this by modifying the input array in-place with O(1) extra memory.
+     * The order of elements can be changed. It doesn't matter what you
+     * leave beyond the new length.
+     * 
+     * Example 1:
+     * Given nums = [3,2,2,3], val = 3,
+     * Your function should return length = 2, with the first two elements
+     * of nums being 2.
+     * 
+     * Example 2:
+     * Given nums = [0,1,2,2,3,0,4,2], val = 2,
+     * Your function should return length = 5, with the first five elements
+     * of nums containing 0, 1, 3, 0, and 4.
+     * 
+     * https://leetcode.com/problems/remove-element/description/
+     */
+    int removeElement(vector<int>& nums, int val);
+
+    /**
+     * 28. Implement strStr()
+     * 
+     * Implement strStr().
+     * Return the index of the first occurrence of needle in haystack, or -1
+     * if needle is not part of haystack.
+     * 
+     * Example 1：
+     * Input: haystack = "hello", needle = "ll"
+     * Output: 2
+     * 
+     * Example 2:
+     * Input: haystack = "aaaaa", needle = "bba"
+     * Output: -1
+     * 
+     * https://leetcode.com/problems/implement-strstr/description/
+     */
+    int strStr(string haystack, string needle);
 };
 #endif
