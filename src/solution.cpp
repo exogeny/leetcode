@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <sstream>
 #include "solution.h"
 
 using std::string;
@@ -453,4 +454,41 @@ int Solution::strStr(string haystack, string needle)
         }
     }
     return -1;
+}
+
+int Solution::searchInsert(vector<int>& nums, int target)
+{
+    if (nums.empty()) return 0;
+
+    int index = 0;
+    vector<int>::iterator curr = nums.begin();
+    while (*curr < target && curr != nums.end())
+        curr++;
+
+    return (curr - nums.begin());
+}
+
+string Solution::countAndSay(int n)
+{
+    if (n <= 0) return "";
+    if (n == 1) return "1";
+
+    string pre = countAndSay(n - 1);
+    std::stringstream result;
+    string::const_iterator slow = pre.begin();
+    string::const_iterator quick = slow + 1;
+
+    while (quick != pre.end())
+    {
+        if (*quick != *slow)
+        {
+            result << (quick - slow) << (*slow);
+            slow = quick;
+        }
+
+        quick++;
+    }
+    result << (quick - slow) << (*slow);
+
+    return result.str();
 }
