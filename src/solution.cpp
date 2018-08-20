@@ -2,6 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
+#include <bits/stdc++.h>
 #include "solution.h"
 
 using std::string;
@@ -491,4 +492,38 @@ string Solution::countAndSay(int n)
     result << (quick - slow) << (*slow);
 
     return result.str();
+}
+
+int Solution::maxSubArray(vector<int>& nums, int left, int right)
+{
+    if (left == right) return nums[left];
+
+    int i, sum;
+    int mid = (left + right) / 2;
+    int maxPadLeft = nums[mid], maxPadRight = nums[mid + 1];
+    int maxLeft = maxSubArray(nums, left, mid);
+    int maxRight = maxSubArray(nums, mid + 1, right);
+    for (i = mid, sum = 0; i >= left; i--)
+    {
+        sum += nums[i];
+        if (sum > maxPadLeft)
+            maxPadLeft = sum;
+    }
+
+    for (i = mid + 1, sum = 0; i <= right; i++)
+    {
+        sum += nums[i];
+        if (sum > maxPadRight)
+            maxPadRight = sum;
+    }
+
+    return max3(maxLeft, maxRight, (maxPadLeft + maxPadRight));
+}
+
+int Solution::maxSubArray(vector<int>& nums)
+{
+    if (nums.empty()) return 0;
+    if (nums.size() == 1) return nums[0];
+
+    return maxSubArray(nums, 0, nums.size() - 1);
 }

@@ -46,5 +46,20 @@ namespace {
             EXPECT_EQ(results[i - 1], s.countAndSay(i));
         }
     }
+
+    TEST(Solution, maxSubArray)
+    {
+        Solution s;
+
+        int n[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+        vector<int> nums(n, n + 9);
+
+        EXPECT_EQ(6, s.maxSubArray(nums));
+
+        nums.erase(nums.begin(), nums.end());
+        nums.push_back(-2);
+        nums.push_back(-1);
+        EXPECT_EQ(-1, s.maxSubArray(nums));
+    }
 }
 

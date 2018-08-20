@@ -20,6 +20,7 @@ class Solution
   private:
     inline int max(int i, int j) { return (i > j ? i : j); }
     inline int min(int i, int j) { return (i > j ? j : i); }
+    inline int max3(int i, int j, int k) { return max(max(i, j), k); }
 
     /**
      * This function is write for getting the length of a list.
@@ -43,6 +44,11 @@ class Solution
      * This function is write for longest common prefix using 'divide and conquer'.
      */
     string longestCommonPrefix(vector<string> &strs, int l, int r);
+
+    /**
+     * This function is write for maxSubArray using the divide and conquer approach.
+     */
+    int maxSubArray(vector<int>& nums, int left, int right);
 
   public:
     int lengthOfLongestSubstring(string s);
@@ -235,6 +241,8 @@ class Solution
      * Example 2:
      * Input: [1,3,5,6], 2
      * Output: 1
+     *
+     * https://leetcode.com/problems/search-insert-position/description/
      */
     int searchInsert(vector<int>& nums, int target);
 
@@ -265,7 +273,26 @@ class Solution
      * 
      * Input: 4
      * Output: "1211"
+     *
+     * https://leetcode.com/problems/count-and-say/description/
      */
     string countAndSay(int n);
+
+    /**
+     * 53. Maximum Subarray
+     *
+     * Given an integer array nums, find the contiguous subarray (containing at
+     * least one number) which has the largest sum and return its sum.
+     *
+     * Example:
+     * Input: [-2,1,-3,4,-1,2,1,-5,4],
+     * Output: 6
+     * Explanation: [4,-1,2,1] has the largest sum = 6.
+     *
+     * Attention: Please use the divide and conquer approach.
+     *
+     * https://leetcode.com/problems/maximum-subarray/description/
+     */
+    int maxSubArray(vector<int>& nums);
 };
 #endif
