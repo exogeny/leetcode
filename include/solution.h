@@ -294,5 +294,121 @@ class Solution
      * https://leetcode.com/problems/maximum-subarray/description/
      */
     int maxSubArray(vector<int>& nums);
+
+    /**
+     * 58. Length of Last Word
+     *
+     * Given a string s consists of upper/lower-case alphabets and empty space characters ' ',
+     * return the length of last word in the string.If the last word does not exist, return 0.
+     *
+     * Note: A word is defined as a character sequence consists of non-space characters only.
+     * Example:
+     * Input: "Hello World"
+     * Output: 5
+     */
+    int lengthOfLastWord(string s);
+
+    /**
+     * 66. Plus One
+     *
+     * Given a non-empty array of digits representing a non-negative integer, plus one to the
+     * integer.
+     * The digits are stored such that the most significant digit is at the head of the list,
+     * and each element in the array contain a single digit.
+     * You may assume the integer does not contain any leading zero, except the number 0 itself.
+     * 
+     * Example 1:
+     * Input: [1,2,3]
+     * Output: [1,2,4]
+     * Explanation: The array represents the integer 123.
+     * 
+     * Example 2:
+     * Input: [4,3,2,1]
+     * Output: [4,3,2,2]
+     * Explanation: The array represents the integer 4321.
+     *
+     * https://leetcode.com/problems/plus-one/description/
+     */
+    vector<int> plusOne(vector<int>& digits);
+
+    /**
+     * 67. Add Binary
+     * 
+     * Given two binary strings, return their sum (also a binary string).
+     * The input strings are both non-empty and contains only characters 1 or 0.
+     * 
+     * Example2:
+     * Input: a = "11", b = "1"
+     * Output: "100"
+     * 
+     * Example2
+     * Input: a = "1010", b = "1011"
+     * Output: "10101"
+     * 
+     * https://leetcode.com/problems/add-binary/description/
+     */
+    string addBinary(string a, string b);
+
+    /**
+     * 70. Climbing Stairs
+     * You are climbing a stair case. It takes n steps to reach to the top.
+     * Each time you can either climb 1 or 2 steps. In how many distinct ways
+     * can you climb to the top?
+     * Note: Given n will be a positive integer.
+     * 
+     * Example 1:
+     * Input: 2
+     * Output: 2
+     * Explanation: There are two ways to climb to the top.
+     * 1. 1 step + 1 step
+     * 2. 2 steps
+     * 
+     * Example 2:
+     * Input: 3
+     * Output: 3
+     * Explanation: There are three ways to climb to the top.
+     * 1. 1 step + 1 step + 1 step
+     * 2. 1 step + 2 steps
+     * 3. 2 steps + 1 step
+     * 
+     * https://leetcode.com/problems/climbing-stairs/description/
+     */
+    int climbStairs(int n);
+
+    /**
+     * 83. Remove Duplicates from Sorted List
+     *
+     * Given a sorted linked list, delete all duplicates such that each element appear only once.
+     * 
+     * Example 1:
+     * Input: 1->1->2
+     * Output: 1->2
+     * 
+     * Example 2:
+     * Input: 1->1->2->3->3
+     * Output: 1->2->3
+     * 
+     * https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/ 
+     */
+    ListNode* deleteDuplicates(ListNode* head);
+
+    /**
+     * 88. Merge Sorted Array
+     * 
+     * Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
+     * Note:
+     *  * The number of elements initialized in nums1 and nums2 are m and n respectively.
+     *  * You may assume that nums1 has enough space (size that is greater or equal to m + n) to hold
+     *    additional elements from nums2.
+     * 
+     * Example:
+     * nums1 = [1,2,3,0,0,0], m = 3
+     * nums2 = [2,5,6],       n = 3
+     * 
+     * Output: [1,2,2,3,5,6]
+     * 
+     * https://leetcode.com/problems/merge-sorted-array/description/
+     **/
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n);
 };
 #endif

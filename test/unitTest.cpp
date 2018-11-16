@@ -1,9 +1,13 @@
+#include <iostream>
+#include <string>
+
 #include "solution.h"
 #include "support.h"
 
-#include "gtest/gtest.h"
+#include <gtest/gtest.h>
 
 namespace {
+
     TEST(Solution, strStr)
     {
         Solution s;
@@ -60,6 +64,46 @@ namespace {
         nums.push_back(-2);
         nums.push_back(-1);
         EXPECT_EQ(-1, s.maxSubArray(nums));
+    }
+
+    TEST(Solution, lengthOfLastWord)
+    {
+        Solution s;
+
+        EXPECT_EQ(5, s.lengthOfLastWord("Hello World"));
+        EXPECT_EQ(5, s.lengthOfLastWord(" World"));
+        EXPECT_EQ(5, s.lengthOfLastWord("World"));
+        EXPECT_EQ(5, s.lengthOfLastWord("   World"));
+        EXPECT_EQ(1, s.lengthOfLastWord(" W"));
+        EXPECT_EQ(1, s.lengthOfLastWord("H W"));
+        EXPECT_EQ(1, s.lengthOfLastWord("H "));
+        EXPECT_EQ(0, s.lengthOfLastWord(" "));
+        EXPECT_EQ(0, s.lengthOfLastWord("  "));
+        EXPECT_EQ(0, s.lengthOfLastWord("      "));
+    }
+
+    TEST(Solution, addBinary)
+    {
+        Solution s;
+
+        EXPECT_EQ("100", s.addBinary("11", "1"));
+    }
+
+    TEST(Solution, climbStairs)
+    {
+        Solution s;
+
+        EXPECT_EQ(3, s.climbStairs(3));
+        EXPECT_EQ(10946, s.climbStairs(20));
+    }
+
+    TEST(Solution, deleteDuplicates)
+    {
+        Solution s;
+
+        EXPECT_EQ("[1]", listNodeToString(s.deleteDuplicates(stringToListNode("[1,1,1]"))));
+        EXPECT_EQ("[1, 2]", listNodeToString(s.deleteDuplicates(stringToListNode("[1,1,2]"))));
+        EXPECT_EQ("[1, 2, 3]", listNodeToString(s.deleteDuplicates(stringToListNode("[1,1,2,3,3]"))));
     }
 }
 

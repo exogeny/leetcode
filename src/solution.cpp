@@ -2,11 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
-#include <bits/stdc++.h>
 #include "solution.h"
-
-using std::string;
-using std::vector;
 
 static const auto _____ = []() {
     std::ios::sync_with_stdio(false);
@@ -526,4 +522,147 @@ int Solution::maxSubArray(vector<int>& nums)
     if (nums.size() == 1) return nums[0];
 
     return maxSubArray(nums, 0, nums.size() - 1);
+}
+
+int Solution::lengthOfLastWord(string s)
+{
+    if (s.size() == 0) return 0;
+    int i, size = s.size();
+    int index = size - 1;
+    while (s[index] == ' ')
+    {
+        size--;
+        index--;
+    }
+    while (index > 0)
+    {
+        if (s[index] == ' ')
+        {
+            break;
+        }
+        index--;
+    }
+
+    if (index == 0 && s[0] != ' ') index--;
+
+    return (size - index - 1);
+}
+
+vector<int> Solution::plusOne(vector<int>& digits)
+{
+    bool carry = true;
+    vector<int>::reverse_iterator iter = digits.rbegin();
+    for (; carry && iter != digits.rend(); iter++)
+    {
+        if (*iter + 1 == 10)
+            *iter = 0;
+        else
+        {
+            *iter = *iter + 1;
+            carry = false;
+        }
+    }
+
+    if (carry)
+        digits.insert(digits.begin(), 1);
+
+    return digits;
+}
+
+string Solution::addBinary(string a, string b)
+{
+    char carry = 0;
+    int la = a.size();
+    int lb = b.size();
+    int lr = la > lb ? la : lb;
+    string r(lr, '0');
+    while (la > 0 || lb > 0)
+    {
+        la--; lb--; lr--;
+        char sum = carry;
+        if (la >= 0) sum += a[la] - '0';
+        if (lb >= 0) sum += b[lb] - '0';
+        sum += '0';
+        if (sum > '1')
+        {
+            r[lr] = sum - '2' + '0';
+            carry = 1;
+        }
+        else
+        {
+            r[lr] = sum;
+            carry = 0;
+        }
+    }
+
+    if (carry == 1)
+        r = "1" + r;
+    
+    return r;
+}
+
+int Solution::climbStairs(int n)
+{
+    if (n <= 3) return n;
+    int steps = 0, i = 0;
+    int oneStep = 1, twoStep = 2;
+    for (i = 3; i <= n; ++i)
+    {
+        steps = oneStep + twoStep;
+        oneStep = twoStep;
+        twoStep = steps;
+    }
+
+    return steps;
+}
+
+ListNode* Solution::deleteDuplicates(ListNode* head)
+{
+    if (head == NULL) return head;
+
+    ListNode* slow = head;
+    ListNode* fast = head->next;
+    
+    while (fast != NULL)
+    {
+        if (slow->val != fast->val)
+        {
+            slow->next = fast;
+            slow = fast;
+        }
+        fast = fast->next;
+    }
+
+    slow->next = NULL;
+
+    return head;
+}
+
+void Solution::merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
+{
+    vector<int>::reverse_iterator ir = nums1.rbegin();
+    vector<int>::reverse_iterator i1 = ir + nums1.size() - m;
+    vector<int>::reverse_iterator i2 = nums2.rbegin();
+
+    while (i1 != nums1.rend() && i2 != nums2.rend())
+    {
+        if (*i1 > *i2)
+        {
+            *ir = *i1;
+            i1++;
+        }
+        else
+        {
+            *ir = *i2;
+            i2++;
+        }
+        ir++;
+    }
+
+    while (i2 != nums2.rend())
+    {
+        *ir = *i2;
+        i2++;
+        ir++;
+    }
 }

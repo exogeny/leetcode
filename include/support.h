@@ -17,4 +17,16 @@ std::vector<int> stringToIntegerVector(std::string input);
  */
 void printList(ListNode* l);
 
+bool vectorintEqual(vector<int>& v1, vector<int>& v2);
+
+/**
+ * Convert the string to list node.
+ **/
+ListNode* stringToListNode(string input);
+
+/**
+ * Convert the listnode to string for compare.
+ **/
+string listNodeToString(ListNode* node);
+
 #endif

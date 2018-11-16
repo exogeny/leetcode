@@ -57,3 +57,49 @@ void printList(ListNode* l)
         l = l->next;
     }
 }
+
+bool vectorintEqual(vector<int>& v1, vector<int>& v2)
+{
+    if (v1.size() != v2.size())
+        return false;
+
+    int i;
+    int size = v1.size();
+    for (i = 0; i < size; i++)
+    {
+        if (v1[i] != v2[i])
+            return false;
+    }
+    return true;
+}
+
+ListNode* stringToListNode(string input)
+{
+    vector<int> list = stringToIntegerVector(input);
+
+    ListNode* dummyRoot = new ListNode(0);
+    ListNode* ptr = dummyRoot;
+    for (int item : list)
+    {
+        ptr->next = new ListNode(item);
+        ptr = ptr->next;
+    }
+
+    ptr = dummyRoot->next;
+    delete dummyRoot;
+
+    return ptr;
+}
+
+string listNodeToString(ListNode* node) {
+    if (node == nullptr) {
+        return "[]";
+    }
+
+    string result;
+    while (node) {
+        result += std::to_string(node->val) + ", ";
+        node = node->next;
+    }
+    return "[" + result.substr(0, result.length() - 2) + "]";
+}
