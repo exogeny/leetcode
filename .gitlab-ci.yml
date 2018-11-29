@@ -2,21 +2,26 @@
 # see https://docs.gitlab.com/ce/ci/yaml/README.html for all available options
 
 before_script:
-  - mkdir build && cd build
+  - echo "build start..."
+  - if [ -d build ]; then rm -rf build; fi
    
-after_script:
-  - if [ -d build ]; then exit 1; fi
-  - cd .. && if [ -d build ]; then rm -rf build; fi
+stages:
+  - build
+  - test
    
-build1:
+build:
   stage: build
   script:
-    - mkdir build && cd build
+    - mkdir -p build && cd build
     - cmake ..
     - make
    
-test1:
+test:
   stage: test
   script: 
+    - mkdir -p build && cd build
+    - cmake ..
+    - make
     - ./test/unitTest
     - if [ "$?" == 0 ]; then echo "Success"; else echo "Failed"; fi
+    - cd .. && if [ -d build ]; then rm -rf build; fi
