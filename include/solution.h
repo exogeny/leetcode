@@ -71,6 +71,25 @@ class Solution
     bool isPalindrome(int x);
 
     /**
+     * 10. Regular Expression Matching
+     * 
+     * Given an input string (s) and a pattern (p), implement regular expression
+     * matching with support for '.' and '*'.
+     *
+     * '.' Matches any single character.
+     * '*' Matches zero or more of the preceding element.
+     *
+     * The matching should cover the entire input string (not partial).
+     *
+     * Note:
+     * s could be empty and contains only lowercase letters a-z.
+     * p could be empty and contains only lowercase letters a-z, and characters like . or *.
+     *
+     * https://leetcode.com/problems/regular-expression-matching/
+     **/
+    bool isMatch(string s, string p);
+
+    /**
      * 13. Roman to Integer
      * 
      * Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.

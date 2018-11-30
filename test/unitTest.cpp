@@ -105,5 +105,16 @@ namespace {
         EXPECT_EQ("[1, 2]", listNodeToString(s.deleteDuplicates(stringToListNode("[1,1,2]"))));
         EXPECT_EQ("[1, 2, 3]", listNodeToString(s.deleteDuplicates(stringToListNode("[1,1,2,3,3]"))));
     }
+
+    TEST(Solution, regularExpressionMatching)
+    {
+        Solution s;
+
+        EXPECT_EQ(false, s.isMatch("aa",          "a"));
+        EXPECT_EQ(true,  s.isMatch("aa",          "a*"));
+        EXPECT_EQ(true,  s.isMatch("ab",          ".*"));
+        EXPECT_EQ(true,  s.isMatch("aab",         "c*a*b"));
+        EXPECT_EQ(false, s.isMatch("mississippi", "mis*is*p*."));
+    }
 }
 
