@@ -3,9 +3,6 @@ project(leetcode)
 
 enable_testing()
 
-#Note: Eclipse automatically picks up include paths with this on!
-SET(CMAKE_VERBOSE_MAKEFILE ON)
-
 ##### Compiler Flags #####
 IF(CMAKE_COMPILER_IS_GNUCXX)
 	IF(DEBUG)
@@ -17,7 +14,13 @@ IF(CMAKE_COMPILER_IS_GNUCXX)
 	ENDIF(DEBUG)
 ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 
-SET(CMAKE_CXX_STANDARD 11)
+IF (CMAKE_VERSION VERSION_LESS "3.1")
+  IF (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
+  ENDIF()
+ELSE()
+  SET(CMAKE_CXX_STANDARD 11)
+ENDIF()
 
 ##### Package Dependencies #####
 include(UseDoxygen OPTIONAL)
