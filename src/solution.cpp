@@ -4,12 +4,6 @@
 #include <sstream>
 #include "solution.h"
 
-static const auto _____ = []() {
-    std::ios::sync_with_stdio(false);
-    std::cin.tie(nullptr);
-    return nullptr;
-}();
-
 vector<int> Solution::twoSum(vector<int> &nums, int target)
 {
     int i = 0, num1, num2;

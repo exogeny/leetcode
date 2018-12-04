@@ -1,4 +1,10 @@
 ADD_EXECUTABLE(unitTest unitTest.cpp)
-TARGET_LINK_LIBRARIES(unitTest gtest gtest_main support solution)
+TARGET_LINK_LIBRARIES(unitTest gtest)
+TARGET_LINK_LIBRARIES(unitTest gtest_main)
+TARGET_LINK_LIBRARIES(unitTest solution)
+
+IF(CMAKE_COMPILER_IS_GNUCXX)
+    TARGET_LINK_LIBRARIES(unitTest pthread)
+ENDIF(CMAKE_COMPILER_IS_GNUCXX)
 
 ADD_TEST(all unitTest)

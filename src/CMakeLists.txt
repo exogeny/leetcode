@@ -1,4 +1,3 @@
-ADD_LIBRARY(support support.cpp)
-
-ADD_LIBRARY(solution solution.cpp
-                     0010_RegularMatching.cpp)
+ADD_LIBRARY(solution    support.cpp
+                        solution.cpp
+                        solutions/0010_RegularMatching.cpp)
