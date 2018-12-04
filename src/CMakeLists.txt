@@ -1,3 +1,6 @@
-ADD_LIBRARY(solution    support.cpp
-                        solution.cpp
-                        solutions/0010_RegularMatching.cpp)
+# Just use the FILE(GLOB ...) for wildcard solutions folder
+FILE(GLOB SOLUTIONS "solutions/*.cc")
+
+ADD_LIBRARY(solution    support.cc
+                        solution.cc
+                        ${SOLUTIONS})
