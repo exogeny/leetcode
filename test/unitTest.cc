@@ -1,12 +1,14 @@
 #include <iostream>
 #include <string>
 
-#include "solution.h"
-#include "support.h"
+#include "solution.hpp"
+#include "support.hpp"
 
 #include <gtest/gtest.h>
 
 namespace {
+    using std::string;
+    using std::vector;
 
     TEST(Solution, strStr)
     {

@@ -2,62 +2,10 @@
 #include <vector>
 #include <algorithm>
 #include <sstream>
-#include "solution.h"
+#include "solution.hpp"
 
-vector<int> Solution::twoSum(vector<int> &nums, int target)
-{
-    int i = 0, num1, num2;
-    vector<int> copied(nums);
-    vector<int> result;
-    sort(copied.begin(), copied.end());
-    vector<int>::iterator front = copied.begin();
-    vector<int>::iterator tail = copied.end() - 1;
-    while (front != tail)
-    {
-        if (target == *front + *tail)
-            break;
-        if (target < *front + *tail)
-            tail--;
-        else
-            front++;
-    }
-    num1 = *front;
-    num2 = *tail;
-    for (i = 0, front = nums.begin(); front != nums.end(); front++, i++)
-    {
-        if (*front == num1 || *front == num2)
-        {
-            result.push_back(i);
-        }
-    }
-    return result;
-}
-
-ListNode *Solution::addTwoNumbers(ListNode *l1, ListNode *l2)
-{
-    ListNode *pHead = new ListNode(0);
-    ListNode *curr = pHead;
-    int carry = 0;
-    int sum = 0;
-    while (l1 || l2)
-    {
-        sum = (l1 ? l1->val : 0) + (l2 ? l2->val : 0) + carry;
-        l1 = (l1 ? l1->next : NULL);
-        l2 = (l2 ? l2->next : NULL);
-        carry = sum / 10;
-        sum = sum % 10;
-        curr->next = new ListNode(sum);
-        curr = curr->next;
-    }
-    if (carry > 0)
-    {
-        curr->next = new ListNode(carry);
-    }
-    curr = pHead;
-    pHead = pHead->next;
-    free(curr);
-    return pHead;
-}
+using std::string;
+using std::vector;
 
 int Solution::lengthOfLongestSubstring(string s)
 {

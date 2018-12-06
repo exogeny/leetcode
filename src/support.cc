@@ -4,42 +4,38 @@
 #include <vector>
 #include <algorithm>
 
-#include "support.h"
+#include "support.hpp"
 
-using std::string;
-using std::vector;
-using std::stringstream;
-
-int stringToInteger(string input)
+int stringToInteger(std::string input)
 {
     return stoi(input);
 }
 
-double stringToDouble(string input)
+double stringToDouble(std::string input)
 {
     return stod(input);
 }
 
-void trimLeftTrailingSpaces(string& input) {
+void trimLeftTrailingSpaces(std::string& input) {
     input.erase(input.begin(), find_if(input.begin(), input.end(), [](int ch) {
         return !isspace(ch);
     }));
 }
 
-void trimRightTrailingSpaces(string& input) {
+void trimRightTrailingSpaces(std::string& input) {
     input.erase(find_if(input.rbegin(), input.rend(), [](int ch) {
         return !isspace(ch);
     }).base(), input.end());
 }
 
-vector<int> stringToIntegerVector(string input) {
-    vector<int> output;
+std::vector<int> stringToIntegerVector(std::string input) {
+    std::vector<int> output;
     trimLeftTrailingSpaces(input);
     trimRightTrailingSpaces(input);
     input = input.substr(1, input.length() - 2);
-    stringstream ss;
+    std::stringstream ss;
     ss.str(input);
-    string item;
+    std::string item;
     char delim = ',';
     while (getline(ss, item, delim)) {
         output.push_back(stoi(item));
@@ -58,7 +54,7 @@ void printList(ListNode* l)
     }
 }
 
-bool vectorintEqual(vector<int>& v1, vector<int>& v2)
+bool vectorintEqual(std::vector<int>& v1, std::vector<int>& v2)
 {
     if (v1.size() != v2.size())
         return false;
@@ -73,9 +69,9 @@ bool vectorintEqual(vector<int>& v1, vector<int>& v2)
     return true;
 }
 
-ListNode* stringToListNode(string input)
+ListNode* stringToListNode(std::string input)
 {
-    vector<int> list = stringToIntegerVector(input);
+    std::vector<int> list = stringToIntegerVector(input);
 
     ListNode* dummyRoot = new ListNode(0);
     ListNode* ptr = dummyRoot;
@@ -91,15 +87,26 @@ ListNode* stringToListNode(string input)
     return ptr;
 }
 
-string listNodeToString(ListNode* node) {
+std::string listNodeToString(ListNode* node) {
     if (node == nullptr) {
         return "[]";
     }
 
-    string result;
+    std::string result;
     while (node) {
         result += std::to_string(node->val) + ", ";
         node = node->next;
     }
     return "[" + result.substr(0, result.length() - 2) + "]";
+}
+
+void freeList(ListNode* root)
+{
+    ListNode* tmp;
+    while (root)
+    {
+        tmp = root;
+        root = root->next;
+        delete tmp;
+    }
 }

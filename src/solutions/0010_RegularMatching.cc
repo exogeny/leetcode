@@ -1,8 +1,11 @@
-#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <sstream>
-#include "solution.h"
+
+#include "solution.hpp"
+
+using std::string;
+using std::vector;
 
 /**
  * Recursion Version

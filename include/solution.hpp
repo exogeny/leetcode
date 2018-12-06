@@ -5,9 +5,6 @@
 #include <string>
 #include <vector>
 
-using std::string;
-using std::vector;
-
 struct ListNode
 {
     int val;
@@ -38,26 +35,29 @@ class Solution
         return length;
     }
 
-    int expandAroundCenter(string s, int left, int right);
+    int expandAroundCenter(std::string s, int left, int right);
 
     /**
      * This function is write for longest common prefix using 'divide and conquer'.
      */
-    string longestCommonPrefix(vector<string> &strs, int l, int r);
+    std::string longestCommonPrefix(std::vector<std::string> &strs, int l, int r);
 
     /**
      * This function is write for maxSubArray using the divide and conquer approach.
      */
-    int maxSubArray(vector<int>& nums, int left, int right);
+    int maxSubArray(std::vector<int>& nums, int left, int right);
 
   public:
-    int lengthOfLongestSubstring(string s);
-    vector<int> twoSum(vector<int> &nums, int target);
-    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2);
-    double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2);
-    string longestPalindrome(string s);
+    /* 1. Two Sum */
+    std::vector<int> twoSum(std::vector<int> &nums, int target);
+    /* 2. Add Two Numbers */
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+
+    int lengthOfLongestSubstring(std::string s);
+    double findMedianSortedArrays(std::vector<int> &nums1, std::vector<int> &nums2);
+    std::string longestPalindrome(std::string s);
     int reverse(int x);
-    vector<vector<int>> threeSum(vector<int> &nums);
+    std::vector<std::vector<int>> threeSum(std::vector<int> &nums);
     double pow(double x, int n);
 
     /**
@@ -87,7 +87,7 @@ class Solution
      *
      * https://leetcode.com/problems/regular-expression-matching/
      **/
-    bool isMatch(string s, string p);
+    bool isMatch(std::string s, std::string p);
 
     /**
      * 13. Roman to Integer
@@ -120,7 +120,7 @@ class Solution
      * 
      * https://leetcode.com/problems/roman-to-integer/description/
      */
-    int romanToInt(string s);
+    int romanToInt(std::string s);
 
     /**
      * 14. Longest Common Prefix
@@ -143,14 +143,14 @@ class Solution
      * 
      * https://leetcode.com/problems/longest-common-prefix/solution/
      */
-    string longestCommonPrefix(vector<string> &strs);
+    std::string longestCommonPrefix(std::vector<std::string> &strs);
 
     /**
      * This function is not a task, write for `longestCommonPrefix`.
      * Input the two strings, so we get the common prefix of the
      * two strings.
      */
-    string commonPrefix(string &left, string &right);
+    std::string commonPrefix(std::string &left, std::string &right);
 
     /**
      * 20. Valid Parentheses
@@ -173,7 +173,7 @@ class Solution
      * 
      * https://leetcode.com/problems/valid-parentheses/description/
      */
-    bool isValid(string s);
+    bool isValid(std::string s);
 
     /**
      * 21. Merge Two Sorted Lists
@@ -201,7 +201,7 @@ class Solution
      * 
      * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
      */
-    int removeDuplicates(vector<int>& nums);
+    int removeDuplicates(std::vector<int>& nums);
 
     /**
      * 27. Remove Element
@@ -225,7 +225,7 @@ class Solution
      * 
      * https://leetcode.com/problems/remove-element/description/
      */
-    int removeElement(vector<int>& nums, int val);
+    int removeElement(std::vector<int>& nums, int val);
 
     /**
      * 28. Implement strStr()
@@ -244,7 +244,7 @@ class Solution
      * 
      * https://leetcode.com/problems/implement-strstr/description/
      */
-    int strStr(string haystack, string needle);
+    int strStr(std::string haystack, std::string needle);
 
     /**
      * 35. Search Insert Position
@@ -263,7 +263,7 @@ class Solution
      *
      * https://leetcode.com/problems/search-insert-position/description/
      */
-    int searchInsert(vector<int>& nums, int target);
+    int searchInsert(std::vector<int>& nums, int target);
 
     /**
      * 38. Count and Say
@@ -295,7 +295,7 @@ class Solution
      *
      * https://leetcode.com/problems/count-and-say/description/
      */
-    string countAndSay(int n);
+    std::string countAndSay(int n);
 
     /**
      * 53. Maximum Subarray
@@ -312,7 +312,7 @@ class Solution
      *
      * https://leetcode.com/problems/maximum-subarray/description/
      */
-    int maxSubArray(vector<int>& nums);
+    int maxSubArray(std::vector<int>& nums);
 
     /**
      * 58. Length of Last Word
@@ -325,7 +325,7 @@ class Solution
      * Input: "Hello World"
      * Output: 5
      */
-    int lengthOfLastWord(string s);
+    int lengthOfLastWord(std::string s);
 
     /**
      * 66. Plus One
@@ -348,7 +348,7 @@ class Solution
      *
      * https://leetcode.com/problems/plus-one/description/
      */
-    vector<int> plusOne(vector<int>& digits);
+    std::vector<int> plusOne(std::vector<int>& digits);
 
     /**
      * 67. Add Binary
@@ -366,7 +366,7 @@ class Solution
      * 
      * https://leetcode.com/problems/add-binary/description/
      */
-    string addBinary(string a, string b);
+    std::string addBinary(std::string a, std::string b);
 
     /**
      * 70. Climbing Stairs
@@ -428,6 +428,6 @@ class Solution
      * 
      * https://leetcode.com/problems/merge-sorted-array/description/
      **/
-    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n);
+    void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
 };
 #endif
