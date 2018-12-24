@@ -3,23 +3,17 @@ include(ExternalProject)
 set(googletest_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/googletest/include)
 set(googletest_URL https://github.com/google/googletest.git)
 set(googletest_BUILD ${CMAKE_CURRENT_BINARY_DIR}/googletest)
-set(googletest_TAG ec44c6c1675c25b9827aacd08c02433cccde7780)
+set(googletest_TAG 150613166524c474a8a97df4c01d46b72050c495)
 
 if (WIN32)
-  if (${CMAKE_GENERATOR} MATCHES "Visual Studio.*")
-    set(googletest_STATIC_LIBRARIES
-        ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/googletest/$(Configuration)/libgtest.lib
-        ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/googletest/$(Configuration)/libgtest_main.lib)
-  else()
-    set(googletest_STATIC_LIBRARIES
-        ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/googletest/libgtest.lib
-        ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/googletest/libgtest_main.lib)
-  endif()
+  set(googletest_LIBRARIES_FOLDER
+      ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/lib/$(Configuration)/)
+  set(googletest_SUFFIX lib)
 else()
-  set(googletest_STATIC_LIBRARIES
-      ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/googletest/${CMAKE_BUILD_TYPE}/libgtest.a
-      ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/googletest/${CMAKE_BUILD_TYPE}/libgtest_main.a)
-  endif()
+  set(googletest_LIBRARIES_FOLDER
+      ${CMAKE_CURRENT_BINARY_DIR}/googletest/src/googletest/lib/lib)
+  set(googletest_SUFFIX a)
+endif()
 
 ExternalProject_Add(googletest
     PREFIX googletest
