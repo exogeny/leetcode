@@ -5,6 +5,8 @@
 #include <string>
 #include <vector>
 
+#define MAX(i, j) ((i) > (j) ? (i) : (j))
+
 struct ListNode
 {
     int val;
@@ -14,10 +16,9 @@ struct ListNode
 
 class Solution
 {
-  private:
+private:
     inline int max(int i, int j) { return (i > j ? i : j); }
     inline int min(int i, int j) { return (i > j ? j : i); }
-    inline int max3(int i, int j, int k) { return max(max(i, j), k); }
 
     /**
      * This function is write for getting the length of a list.
@@ -35,23 +36,16 @@ class Solution
         return length;
     }
 
-    int expandAroundCenter(std::string s, int left, int right);
-
     /**
      * This function is write for longest common prefix using 'divide and conquer'.
      */
     std::string longestCommonPrefix(std::vector<std::string> &strs, int l, int r);
 
-    /**
-     * This function is write for maxSubArray using the divide and conquer approach.
-     */
-    int maxSubArray(std::vector<int>& nums, int left, int right);
-
-  public:
+public:
     /* 1. Two Sum */
     std::vector<int> twoSum(std::vector<int> &nums, int target);
     /* 2. Add Two Numbers */
-    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
+    ListNode *addTwoNumbers(ListNode *l1, ListNode *l2);
 
     int lengthOfLongestSubstring(std::string s);
     double findMedianSortedArrays(std::vector<int> &nums1, std::vector<int> &nums2);
@@ -188,7 +182,7 @@ class Solution
      * 
      * https://leetcode.com/problems/merge-two-sorted-lists/description/
      */
-    ListNode* mergeTwoLists(ListNode *l1, ListNode *l2);
+    ListNode *mergeTwoLists(ListNode *l1, ListNode *l2);
 
     /**
      * 26. Remove Duplicates from Sorted Array
@@ -201,7 +195,7 @@ class Solution
      * 
      * https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
      */
-    int removeDuplicates(std::vector<int>& nums);
+    int removeDuplicates(std::vector<int> &nums);
 
     /**
      * 27. Remove Element
@@ -225,7 +219,7 @@ class Solution
      * 
      * https://leetcode.com/problems/remove-element/description/
      */
-    int removeElement(std::vector<int>& nums, int val);
+    int removeElement(std::vector<int> &nums, int val);
 
     /**
      * 28. Implement strStr()
@@ -263,7 +257,7 @@ class Solution
      *
      * https://leetcode.com/problems/search-insert-position/description/
      */
-    int searchInsert(std::vector<int>& nums, int target);
+    int searchInsert(std::vector<int> &nums, int target);
 
     /**
      * 38. Count and Say
@@ -312,7 +306,7 @@ class Solution
      *
      * https://leetcode.com/problems/maximum-subarray/description/
      */
-    int maxSubArray(std::vector<int>& nums);
+    int maxSubArray(std::vector<int> &nums);
 
     /**
      * 58. Length of Last Word
@@ -348,7 +342,7 @@ class Solution
      *
      * https://leetcode.com/problems/plus-one/description/
      */
-    std::vector<int> plusOne(std::vector<int>& digits);
+    std::vector<int> plusOne(std::vector<int> &digits);
 
     /**
      * 67. Add Binary
@@ -409,7 +403,7 @@ class Solution
      * 
      * https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/ 
      */
-    ListNode* deleteDuplicates(ListNode* head);
+    ListNode *deleteDuplicates(ListNode *head);
 
     /**
      * 88. Merge Sorted Array
@@ -428,6 +422,6 @@ class Solution
      * 
      * https://leetcode.com/problems/merge-sorted-array/description/
      **/
-    void merge(std::vector<int>& nums1, int m, std::vector<int>& nums2, int n);
+    void merge(std::vector<int> &nums1, int m, std::vector<int> &nums2, int n);
 };
 #endif
