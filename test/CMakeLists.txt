@@ -1,6 +1,7 @@
 # Just use the FILE(GLOB ...) for wildcard solutions folder
 FILE(GLOB TESTS "*.cc")
 ADD_EXECUTABLE(unitTest ${TESTS})
+ADD_DEPENDENCIES(unitTest googletest)
 
 include_directories(${googletest_INCLUDE_DIRS})
 
