@@ -38,3 +38,6 @@
 # For build Folder
 build/
 builds/
+
+# For bazel
+bazel*
