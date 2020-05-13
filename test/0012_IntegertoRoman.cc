@@ -1,54 +1,37 @@
-#include "solution.hpp"
-#include "support.hpp"
+#include "solution.h"
+#include "support.h"
+#include "test.h"
 
-#include <gtest/gtest.h>
-
-namespace
+namespace LeetcodeTest
 {
-using std::string;
+  static inline void testIntegerRoman(int val, const std::string &expected)
+  {
+    std::string res = Instance().intToRoman(val);
+    EXPECT_STREQ(expected.c_str(), res.c_str());
+  }
 
-TEST(Solution, IntegertoRoman_1)
-{
-  Solution s;
-  string expected = "III";
+  LEETCODE_TEST(IntegertoRoman_1)
+  {
+    testIntegerRoman(3, "III");
+  }
 
-  string result = s.intToRoman(3);
-  EXPECT_STREQ(result.c_str(), expected.c_str());
-}
+  LEETCODE_TEST(IntegertoRoman_2)
+  {
+    testIntegerRoman(4, "IV");
+  }
 
-TEST(Solution, IntegertoRoman_2)
-{
-  Solution s;
-  string expected = "IV";
+  LEETCODE_TEST(IntegertoRoman_3)
+  {
+    testIntegerRoman(9, "IX");
+  }
 
-  string result = s.intToRoman(4);
-  EXPECT_STREQ(result.c_str(), expected.c_str());
-}
+  LEETCODE_TEST(IntegertoRoman_4)
+  {
+    testIntegerRoman(58, "LVIII");
+  }
 
-TEST(Solution, IntegertoRoman_3)
-{
-  Solution s;
-  string expected = "IX";
-
-  string result = s.intToRoman(9);
-  EXPECT_STREQ(result.c_str(), expected.c_str());
-}
-
-TEST(Solution, IntegertoRoman_4)
-{
-  Solution s;
-  string expected = "LVIII";
-
-  string result = s.intToRoman(58);
-  EXPECT_STREQ(result.c_str(), expected.c_str());
-}
-
-TEST(Solution, IntegertoRoman_5)
-{
-  Solution s;
-  string expected = "MCMXCIV";
-
-  string result = s.intToRoman(1994);
-  EXPECT_STREQ(result.c_str(), expected.c_str());
-}
-}
+  LEETCODE_TEST(IntegertoRoman_5)
+  {
+    testIntegerRoman(1994, "MCMXCIV");
+  }
+} // namespace LeetcodeTest

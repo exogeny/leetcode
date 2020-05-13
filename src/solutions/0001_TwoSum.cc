@@ -1,7 +1,7 @@
 #include <vector>
 #include <unordered_map>
 
-#include "solution.hpp"
+#include "solution.h"
 
 using std::vector;
 using std::unordered_map;

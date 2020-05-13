@@ -1,4 +1,4 @@
-#include "solution.hpp"
+#include "solution.h"
 
 ListNode *Solution::deleteDuplicates(ListNode *head)
 {

@@ -1,21 +1,12 @@
-#include <vector>
+#include "solution.h"
+#include "support.h"
+#include "test.h"
 
-#include "solution.hpp"
-#include "support.hpp"
-
-#include <gtest/gtest.h>
-
-namespace
+namespace LeetcodeTest
 {
-using std::vector;
-
-TEST(Solution, maxArea)
-{
-  Solution s;
-
-  vector<int> input({1, 8, 6, 2, 5, 4, 8, 3, 7});
-  int result = s.maxArea(input);
-
-  EXPECT_EQ(49, result);
-}
-}
+  LEETCODE_TEST(maxArea)
+  {
+    std::vector<int> input({1, 8, 6, 2, 5, 4, 8, 3, 7});
+    EXPECT_EQ(49, Instance().maxArea(input));
+  }
+} // namespace LeetcodeTest\n

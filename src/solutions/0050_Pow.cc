@@ -1,4 +1,4 @@
-#include "solution.hpp"
+#include "solution.h"
 
 double Solution::pow(double x, int n)
 {

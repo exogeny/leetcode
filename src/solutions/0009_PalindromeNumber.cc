@@ -1,4 +1,4 @@
-#include "solution.hpp"
+#include "solution.h"
 
 bool Solution::isPalindrome(int x)
 {

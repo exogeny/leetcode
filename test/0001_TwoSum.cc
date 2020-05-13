@@ -1,27 +1,22 @@
-#include <iostream>
-#include <vector>
+#include "solution.h"
+#include "support.h"
+#include "test.h"
 
-#include "solution.hpp"
-#include "support.hpp"
-
-#include <gtest/gtest.h>
-
-namespace
+namespace LeetcodeTest
 {
-    TEST(Solution, twoSum)
-    {
-        size_t i;
-        int target = 9;
-        Solution s;
-        std::vector<int> nums = { 2, 7, 11, 19 };
+  LEETCODE_TEST(twoSum)
+  {
+    size_t i;
+    int target = 9;
+    std::vector<int> nums = {2, 7, 11, 19};
 
-        std::vector<int> expected = { 0, 1 };
-        std::vector<int> actual   = s.twoSum(nums, target);
-        
-        EXPECT_EQ(expected.size(), actual.size());
-        for (i = 0; i < expected.size() && i < actual.size(); i++)
-        {
-            EXPECT_EQ(expected[i], actual[i]);
-        }
+    std::vector<int> expected = {0, 1};
+    std::vector<int> actual = Instance().twoSum(nums, target);
+
+    EXPECT_EQ(expected.size(), actual.size());
+    for (i = 0; i < expected.size() && i < actual.size(); i++)
+    {
+      EXPECT_EQ(expected[i], actual[i]);
     }
-}
+  }
+} // namespace LeetcodeTest

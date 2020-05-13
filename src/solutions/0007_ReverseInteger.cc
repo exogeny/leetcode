@@ -1,4 +1,4 @@
-#include "solution.hpp"
+#include "solution.h"
 
 int Solution::reverse(int x)
 {

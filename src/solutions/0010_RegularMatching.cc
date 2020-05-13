@@ -2,7 +2,7 @@
 #include <algorithm>
 #include <sstream>
 
-#include "solution.hpp"
+#include "solution.h"
 
 using std::string;
 using std::vector;

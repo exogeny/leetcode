@@ -4,7 +4,7 @@
 #include <vector>
 #include <algorithm>
 
-#include "support.hpp"
+#include "support.h"
 
 int stringToInteger(std::string input)
 {
@@ -28,13 +28,14 @@ void trimRightTrailingSpaces(std::string& input) {
     }).base(), input.end());
 }
 
-std::vector<int> stringToIntegerVector(std::string input) {
+std::vector<int> stringToIntegerVector(const std::string &input) {
     std::vector<int> output;
-    trimLeftTrailingSpaces(input);
-    trimRightTrailingSpaces(input);
-    input = input.substr(1, input.length() - 2);
+    std::string copied(input);
+    trimLeftTrailingSpaces(copied);
+    trimRightTrailingSpaces(copied);
+    copied = copied.substr(1, copied.length() - 2);
     std::stringstream ss;
-    ss.str(input);
+    ss.str(copied);
     std::string item;
     char delim = ',';
     while (getline(ss, item, delim)) {
@@ -69,7 +70,7 @@ bool vectorintEqual(std::vector<int>& v1, std::vector<int>& v2)
     return true;
 }
 
-ListNode* stringToListNode(std::string input)
+ListNode* stringToListNode(const std::string &input)
 {
     std::vector<int> list = stringToIntegerVector(input);
 

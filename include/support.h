@@ -5,12 +5,30 @@
 #include <string>
 #include <vector>
 
-#include "solution.hpp"
+#include "solution.h"
 
+/**
+ * Convert the string to Integer.
+ **/
 int stringToInteger(std::string input);
+
+/**
+ * Convert the string to Double.
+ **/
 double stringToDouble(std::string input);
+
+/**
+ * trim the space of the string on left.
+ **/
 void trimLeftTrailingSpaces(std::string& input);
-std::vector<int> stringToIntegerVector(std::string input);
+
+/**
+ * Convert the string to vectot<int>.
+ *
+ * For Example:
+ * The string "[1, 2, 3]" will return {1, 2, 3}.
+ **/
+std::vector<int> stringToIntegerVector(const std::string &input);
 
 /**
  * Print the list.
@@ -22,7 +40,7 @@ bool vectorintEqual(std::vector<int>& v1, std::vector<int>& v2);
 /**
  * Convert the string to list node.
  **/
-ListNode* stringToListNode(std::string input);
+ListNode* stringToListNode(const std::string &input);
 
 /**
  * Convert the listnode to string for compare.

@@ -1,5 +1,5 @@
 #include <sstream>
-#include "solution.hpp"
+#include "solution.h"
 
 using std::string;
 

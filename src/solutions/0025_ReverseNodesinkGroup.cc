@@ -1,5 +1,5 @@
 #include <algorithm>
-#include "solution.hpp"
+#include "solution.h"
 
 using std::vector;
 

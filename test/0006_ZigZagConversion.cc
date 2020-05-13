@@ -1,35 +1,24 @@
-#include <iostream>
-#include <vector>
+#include "solution.h"
+#include "support.h"
+#include "test.h"
 
-#include "solution.hpp"
-#include "support.hpp"
-
-#include <gtest/gtest.h>
-
-using std::vector;
-using std::string;
-
-namespace
+namespace LeetcodeTest
 {
-    TEST(Solution, ZigZagConversion_1)
-    {
-        Solution s;
+  static inline void testZigZagConversion(const std::string val,
+                                          const std::string exp,
+                                          int numRows)
+  {
+    std::string res = Instance().convert(val, numRows);
+    EXPECT_STREQ(exp.c_str(), res.c_str());
+  }
 
-        string val = "PAYPALISHIRING";
-        string exp = "PAHNAPLSIIGYIR";
+  LEETCODE_TEST(ZigZagConversion_1)
+  {
+    testZigZagConversion("PAYPALISHIRING", "PAHNAPLSIIGYIR", 3);
+  }
 
-        string res = s.convert(val, 3);
-        EXPECT_STREQ(res.c_str(), exp.c_str());
-    }
-
-    TEST(Solution, ZigZagConversion_2)
-    {
-        Solution s;
-
-        string val = "PAYPALISHIRING";
-        string exp = "PINALSIGYAHRPI";
-
-        string res = s.convert(val, 4);
-        EXPECT_STREQ(res.c_str(), exp.c_str());
-    }
-}
+  LEETCODE_TEST(ZigZagConversion_2)
+  {
+    testZigZagConversion("PAYPALISHIRING", "PINALSIGYAHRPI", 4);
+  }
+} // namespace LeetcodeTest

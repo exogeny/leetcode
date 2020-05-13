@@ -16,10 +16,10 @@ cc_library(
   srcs = glob(
     include = [
       "src/solutions/*.cc",
-      "include/solution.hpp"
+      "include/solution.h",
     ]
   ),
-  hdrs = ["include/solution.hpp"],
+  hdrs = ["include/solution.h"],
   includes = ["include"]
 )
 
@@ -27,16 +27,20 @@ cc_library(
   name = "leetcode-support",
   srcs = [
     "src/support.cc",
-    "include/support.hpp"
+    "include/support.h",
   ],
-  hdrs = ["include/support.hpp"],
+  hdrs = ["include/support.h"],
   includes = ["include"],
 )
 
 cc_test(
   name = "leetcode-test",
   size = "small",
-  srcs = glob(["test/*.cc"]),
+  srcs = glob(
+    include = [
+      "test/*.cc",
+      "include/test.h",
+  ]),
   copts = ["-Iexternal/gtest/include"],
   deps = [
     "@gtest//:gtest-lib",
