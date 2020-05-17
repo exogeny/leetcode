@@ -15,6 +15,7 @@ int Solution::threesumClosest(vector<int>& nums, int target)
   vector<int>::iterator right = end - 1;
   result = *index + *left + *right;
   result = ABS(result - target);
+  last = result;
 
   while (index < end - 1)
   {
