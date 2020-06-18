@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "solution.h"
+#include "listnode.h"
 
 /**
  * Convert the string to Integer.

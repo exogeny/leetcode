@@ -19,8 +19,13 @@ cc_library(
       "include/solution.h",
     ]
   ),
-  hdrs = ["include/solution.h"],
-  includes = ["include"]
+  hdrs = [
+    "include/solution.h",
+    "include/listnode.h",
+  ],
+  includes = [
+    "include",
+  ],
 )
 
 cc_library(
@@ -29,8 +34,13 @@ cc_library(
     "src/support.cc",
     "include/support.h",
   ],
-  hdrs = ["include/support.h"],
-  includes = ["include"],
+  hdrs = [
+    "include/support.h",
+    "include/listnode.h",
+  ],
+  includes = [
+    "include",
+  ],
 )
 
 cc_test(
