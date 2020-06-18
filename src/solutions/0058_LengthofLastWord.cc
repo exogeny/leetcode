@@ -7,7 +7,7 @@ int Solution::lengthOfLastWord(string s)
     if (s.size() == 0)
         return 0;
 
-    int i, size = s.size();
+    unsigned int size = s.size();
     int index = size - 1;
     while (s[index] == ' ')
     {

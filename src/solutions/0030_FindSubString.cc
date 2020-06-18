@@ -10,8 +10,8 @@ vector<int> Solution::findSubstring(string s, vector<string>& words)
   if (s.size() == 0 || words.size() == 0)
     return res;
 
-  int words_size = words.size();
-  int word_length = words[0].size();
+  unsigned int words_size = words.size();
+  unsigned int word_length = words[0].size();
 
   if (words_size * word_length > s.size())
     return res;
@@ -23,10 +23,10 @@ vector<int> Solution::findSubstring(string s, vector<string>& words)
   }
 
   unordered_map<string, int> words_founds;
-  for (int i = 0; i <= s.length() - words_size * word_length; i++)
+  for (unsigned int i = 0; i <= s.length() - words_size * word_length; i++)
   {
     words_founds.clear();
-    for (int j = 0; j < words_size; j++)
+    for (unsigned int j = 0; j < words_size; j++)
     {
       int next_index = i + j * word_length;
       string word = s.substr(next_index, word_length);

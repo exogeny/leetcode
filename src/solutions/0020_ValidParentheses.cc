@@ -5,7 +5,6 @@ using std::vector;
 
 bool Solution::isValid(string s)
 {
-    bool result;
     vector<char> stack;
     for (char c : s)
     {
