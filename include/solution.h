@@ -457,6 +457,20 @@ public:
     int longestValidParentheses(std::string s);
 
     /**
+     * 33. Search in Rotated Sorted Array
+     *
+     * Suppose an array sorted in ascending order is rotated at some pivot
+     * unknown to you beforehand. (i.e., [0,1,2,4,5,6,7] might become
+     * [4,5,6,7,0,1,2]). You are given a target value to search. If found in
+     * the array return its index, otherwise return -1. You may assume no
+     * duplicate exists in the array. Your algorithm's runtime complexity must
+     * be in the order of O(log n).
+     *
+     * https://leetcode.com/problems/search-in-rotated-sorted-array/
+     **/
+    int search(std::vector<int> &nums, int target);
+
+    /**
      * 35. Search Insert Position
      *
      * Given a sorted array and a target value, return the index if the target is
