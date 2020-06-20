@@ -503,6 +503,22 @@ public:
     int searchInsert(std::vector<int> &nums, int target);
 
     /**
+     * 36. Valid Sudoku
+     *
+     * Determine if a 9x9 Sudoku board is valid. Only the filled cells need to
+     * be validated according to the following rules:
+     * 1. Each row must contain the digits 1-9 without repetition.
+     * 2. Each column must contain the digits 1-9 without repetition.
+     * 3. Each of the 9 3x3 sub-boxes of the grid must contain the digits 1-9
+     *    without repetition.
+     * The Sudoku board could be partially filled, where empty cells are filled
+     * with the character '.'.
+     *
+     * https://leetcode.com/problems/valid-sudoku/
+     **/
+    bool isValidSudoku(std::vector<std::vector<char>> &board);
+
+    /**
      * 38. Count and Say
      *
      * The count-and-say sequence is the sequence of integers with the first five
