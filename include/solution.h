@@ -8,6 +8,7 @@
 #include "listnode.h"
 
 #define MAX(i, j) ((i) > (j) ? (i) : (j))
+#define MIN(i, j) ((i) > (j) ? (j) : (i))
 #ifndef ABS
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 #endif
@@ -469,6 +470,18 @@ public:
      * https://leetcode.com/problems/search-in-rotated-sorted-array/
      **/
     int search(std::vector<int> &nums, int target);
+
+    /**
+     * 34. Find First and Last Position of Element in Sorted Array
+     *
+     * Given an array of integers nums sorted in ascending order, find the
+     * starting and ending position of a given target value.
+     * Your algorithm's runtime complexity must be in the order of O(log n).
+     * If the target is not found in the array, return [-1, -1].
+     *
+     * https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
+     **/
+    std::vector<int> searchRange(std::vector<int> &num, int target);
 
     /**
      * 35. Search Insert Position
