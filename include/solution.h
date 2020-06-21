@@ -570,6 +570,23 @@ public:
         std::vector<int> &candidates, int target);
 
     /**
+     * 40 Combination Sum II
+     *
+     * Given a collection of candidate numbers (candidates) and a target number
+     * (target), find all unique combinations in candidates where the candidate
+     * numbers sums to target.
+     *
+     * Each number in candidates may only be used once in the combination.
+     * Note:
+     *  1. All numbers (including target) will be positive integers.
+     *  2. The solution set must not contain duplicate combinations.
+     *
+     * https://leetcode.com/problems/combination-sum-ii/
+     **/
+    std::vector<std::vector<int>> combinationSum2(
+        std::vector<int> &candidates, int target);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
