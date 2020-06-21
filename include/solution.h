@@ -551,6 +551,25 @@ public:
     std::string countAndSay(int n);
 
     /**
+     * 39. Combination Sum
+     *
+     * Given a set of candidate numbers (candidates) (without duplicates) and
+     * a target number (target), find all unique combinations in candidates
+     * where the candidate numbers sums to target.
+     *
+     * The same repeated number may be chosen from candidates unlimited number
+     * of times.
+     *
+     * Noete:
+     *  1. All numbers (including target) will be positive integers.
+     *  2. The solution set must not contain duplicate combinations.
+     *
+     * https://leetcode.com/problems/combination-sum/
+     **/
+    std::vector<std::vector<int>> combinationSum(
+        std::vector<int> &candidates, int target);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
