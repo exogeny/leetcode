@@ -608,6 +608,19 @@ public:
         std::vector<int> &candidates, int target);
 
     /**
+     * 41. First Missing Positive
+     *
+     * Given an unsorted integer array, find the smallest missing positive
+     * integer.
+     *
+     * Note: Your algorithm should run in O(n) time and uses constant
+     * extra space.
+     *
+     * https://leetcode.com/problems/first-missing-positive/
+     **/
+    int firstMissingPositive(std::vector<int> &nums);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
