@@ -632,6 +632,24 @@ public:
     int trap(std::vector<int> &height);
 
     /**
+     * 43. Multiply Strings
+     *
+     * Given two non-negative integers num1 and num2 represented as strings,
+     * return the product of num1 and num2, also represented as a string.
+     *
+     * Note:
+     * 1. The length of both num1 and num2 is < 110.
+     * 2. Both num1 and num2 contain only digits 0-9.
+     * 3. Both num1 and num2 do not contain any leading zero, except the
+     *    number 0 itself.
+     * 4. You must not use any built-in BigInteger library or convert the
+     *    inputs to integer directly.
+     *
+     * https://leetcode.com/problems/multiply-strings/
+     **/
+    std::string multiply(std::string &num1, std::string &num2);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
