@@ -650,6 +650,24 @@ public:
     std::string multiply(std::string &num1, std::string &num2);
 
     /**
+     * 44. Wildcard Matching
+     *
+     * Given an input string (s) and a pattern (p), implement wildcard pattern
+     * matching with support for '?' and '*'.
+     *   '?' Matches any single character.
+     *   '*' Matches any sequence of characters (including the empty sequence).
+     *
+     * The matching should cover the entire input string (not partial).
+     * Note:
+     * 1. s could be empty and contains only lowercase letters a-z.
+     * 2. p could be empty and contains only lowercase letters a-z,
+     *    and characters like ? or *.
+     *
+     * https://leetcode.com/problems/wildcard-matching/
+     **/
+    bool isMatch2(std::string &s, std::string &p);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
