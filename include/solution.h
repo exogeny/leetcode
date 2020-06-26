@@ -668,6 +668,18 @@ public:
     bool isMatch2(std::string &s, std::string &p);
 
     /**
+     * 45. Jump Game II
+     *
+     * Given an array of non-negative integers, you are initially positioned at
+     * the first index of the array. Each element in the array represents your
+     * maximum jump length at that position. Your goal is to reach the last
+     * index in the minimum number of jumps.
+     *
+     * https://leetcode.com/problems/jump-game-ii/
+     **/
+    int jump(std::vector<int> &nums);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
