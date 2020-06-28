@@ -680,6 +680,16 @@ public:
     int jump(std::vector<int> &nums);
 
     /**
+     * 46. Permutations
+     *
+     * Given a collection of distinct integers, return all possible
+     * permutations.
+     *
+     * https://leetcode.com/problems/permutations/
+     **/
+    std::vector<std::vector<int>> permute(std::vector<int>& nums);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at

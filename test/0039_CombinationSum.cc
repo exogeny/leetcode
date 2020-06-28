@@ -6,18 +6,6 @@ namespace LeetcodeTest
 {
   using std::vector;
 
-  static bool compare_fn(vector<int> &v1, vector<int> &v2)
-  {
-    for (unsigned i = 0; i < v1.size() && i < v2.size(); i++)
-    {
-      if (v1[i] < v2[i])
-        return true;
-      if (v1[i] > v2[i])
-        return false;
-    }
-    return v1.size() < v2.size();
-  }
-
   LEETCODE_TEST(CombinationSum_1)
   {
     vector<int> candidates = {2, 3, 6, 7};
@@ -27,7 +15,7 @@ namespace LeetcodeTest
     sort(res.begin(), res.end(), compare_fn);
     for (unsigned i = 0; i < res.size(); i++)
     {
-      EXPECT_TRUE(vectorintEqual(res[i], expected[i]));
+      EXPECT_EQ(res[i], expected[i]);
     }
   }
 
@@ -40,7 +28,7 @@ namespace LeetcodeTest
     sort(res.begin(), res.end(), compare_fn);
     for (unsigned i = 0; i < res.size(); i++)
     {
-      EXPECT_TRUE(vectorintEqual(res[i], expected[i]));
+      EXPECT_EQ(res[i], expected[i]);
     }
   }
 }

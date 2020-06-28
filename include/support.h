@@ -35,8 +35,6 @@ std::vector<int> stringToIntegerVector(const std::string &input);
  */
 void printList(ListNode* l);
 
-bool vectorintEqual(std::vector<int>& v1, std::vector<int>& v2);
-
 /**
  * Convert the string to list node.
  **/
@@ -51,5 +49,10 @@ std::string listNodeToString(ListNode* node);
  * Free the List
  */
 void freeList(ListNode* root);
+
+/**
+ * compare function of vectors.
+ **/
+bool compare_fn(std::vector<int> &v1, std::vector<int> &v2);
 
 #endif
