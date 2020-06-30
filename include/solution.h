@@ -714,6 +714,20 @@ public:
     void rotate(std::vector<std::vector<int>>& matrix);
 
     /**
+     * 49. Group Anagrams
+     *
+     * Given an array of strings, group anagrams together.
+     *
+     * Note:
+     *  1. All inputs will be in lowercase.
+     *  2. The order of your output does not matter.
+     *
+     * https://leetcode.com/problems/group-anagrams/
+     **/
+    std::vector<std::vector<std::string>> groupAnagrams(
+        std::vector<std::string>& strs);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
