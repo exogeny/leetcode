@@ -690,6 +690,16 @@ public:
     std::vector<std::vector<int>> permute(std::vector<int>& nums);
 
     /**
+     * 47. Permutations II
+     *
+     * Given a collection of numbers that might contain duplicates,
+     * return all possible unique permutations.
+     *
+     * https://leetcode.com/problems/permutations-ii/
+     **/
+    std::vector<std::vector<int>> permuteUnique(std::vector<int>& nums);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
