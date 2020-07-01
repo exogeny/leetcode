@@ -37,19 +37,66 @@ private:
 
     /**
      * This function is write for longest common prefix using 'divide and conquer'.
-     */
+     **/
     std::string longestCommonPrefix(std::vector<std::string> &strs, int l, int r);
 
 public:
-    /* 1. Two Sum */
+    /**
+     * 1. Two Sum
+     *
+     * Given an array of integers, return indices of the two numbers such that
+     * they add up to a specific target.
+     * You may assume that each input would have exactly one solution, and you
+     * may not use the same element twice.
+     *
+     * https://leetcode.com/problems/two-sum/
+     **/
     std::vector<int> twoSum(std::vector<int> &nums, int target);
-    /* 2. Add Two Numbers */
+
+    /**
+     * 2. Add Two Numbers
+     *
+     * You are given two non-empty linked lists representing two non-negative
+     * integers. The digits are stored in reverse order and each of their nodes
+     * contain a single digit. Add the two numbers and return it as a linked
+     * list. You may assume the two numbers do not contain any leading zero,
+     * except the number 0 itself.
+     *
+     * https://leetcode.com/problems/add-two-numbers/
+     **/
     ListNode *addTwoNumbers(ListNode *l1, ListNode *l2);
 
+    /**
+     * 3. Longest Substring Without Repeating Characters
+     *
+     * Given a string, find the length of the longest substring without
+     * repeating characters.
+     *
+     * https://leetcode.com/problems/longest-substring-without-repeating-characters/
+     **/
     int lengthOfLongestSubstring(std::string s);
+
+    /**
+     * 4. Median of Two Sorted Arrays
+     *
+     * There are two sorted arrays nums1 and nums2 of size m and n respectively.
+     * Find the median of the two sorted arrays. The overall run time complexity
+     * should be O(log (m+n)).
+     * nums1 and nums2 cannot be both empty.
+     *
+     * https://leetcode.com/problems/median-of-two-sorted-arrays/
+     **/
     double findMedianSortedArrays(std::vector<int> &nums1, std::vector<int> &nums2);
+
+    /**
+     * 5. Longest Palindromic Substring
+     *
+     * Given a string s, find the longest palindromic substring in s. You may
+     * assume that the maximum length of s is 1000.
+     *
+     * https://leetcode.com/problems/longest-palindromic-substring/
+     **/
     std::string longestPalindrome(std::string s);
-    double pow(double x, int n);
 
     /**
      * 6. ZigZag Conversion
@@ -270,6 +317,42 @@ public:
     int threesumClosest(std::vector<int>& nums, int target);
 
     /**
+     * 17. Letter Combinations of a Phone Number
+     *
+     * Given a string containing digits from 2-9 inclusive, return all possible
+     * letter combinations that the number could represent.
+     *
+     * Although the above answer is in lexicographical order, your answer could
+     * be in any order you want.
+     *
+     * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
+     **/
+    std::vector<std::string> letterCombinations(std::string &digits);
+
+    /**
+     * 18. 4Sum
+     *
+     * Given an array nums of n integers and an integer target, are there
+     * elements a, b, c, and d in nums such that a + b + c + d = target?
+     * Find all unique quadruplets in the array which gives the sum of target.
+     * Note: The solution set must not contain duplicate quadruplets.
+     *
+     * https://leetcode.com/problems/4sum/
+     **/
+    std::vector<std::vector<int>> fourSum(std::vector<int> &nums, int target);
+
+    /**
+     * 19. Remove Nth Node From End of List
+     *
+     * Given a linked list, remove the n-th node from the end of list and return
+     * its head.
+     * Note: Given n will always be valid.
+     *
+     * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+     **/
+    ListNode* removeNthFromEnd(ListNode* head, int n);
+
+    /**
      * 20. Valid Parentheses
      *
      * Given a string containing just the characters '(', ')', '{', '}',
@@ -323,6 +406,26 @@ public:
      * ]
      */
     std::vector<std::string> generateParenthesis(int n);
+
+    /**
+     * 23. Merge k Sorted Lists
+     *
+     * Merge k sorted linked lists and return it as one sorted list.
+     *
+     * https://leetcode.com/problems/merge-k-sorted-lists/
+     **/
+    ListNode* mergeKLists(std::vector<ListNode*> &lists);
+
+    /**
+     * 24. Swap Nodes in Pairs
+     *
+     * Given a linked list, swap every two adjacent nodes and return its head.
+     * You may not modify the values in the list's nodes, only nodes itself
+     * may be changed.
+     *
+     * https://leetcode.com/problems/swap-nodes-in-pairs/
+     **/
+    ListNode* swapPairs(ListNode* head);
 
     /**
      * 25. Reverse Nodes in k-Group
@@ -390,6 +493,20 @@ public:
      * https://leetcode.com/problems/implement-strstr/description/
      */
     int strStr(std::string haystack, std::string needle);
+
+    /**
+     * 29. Divide Two Integers
+     *
+     * Given two integers dividend and divisor, divide two integers without
+     * using multiplication, division and mod operator.
+     * Return the quotient after dividing dividend by divisor.
+     * The integer division should truncate toward zero, which means losing its
+     * fractional part. For example, truncate(8.345) = 8 and
+     * truncate(-2.7335) = -2.
+     *
+     * https://leetcode.com/problems/divide-two-integers/
+     **/
+    int divide(int dividend, int divisor);
 
     /**
      * 30. Substring with Concatenation of All Words
@@ -726,6 +843,19 @@ public:
      **/
     std::vector<std::vector<std::string>> groupAnagrams(
         std::vector<std::string>& strs);
+
+    /**
+     * 50 Pow(x, n)
+     *
+     * Implement pow(x, n), which calculates x raised to the power n (x^n).
+     *
+     * Note:
+     *  1. -100.0 < x < 100.0
+     *  2. n is a 32-bit signed integer, within the range [-2^31, 2^31 - 1].
+     *
+     * https://leetcode.com/problems/powx-n/
+     **/
+    double pow(double x, int n);
 
     /**
      * 53. Maximum Subarray

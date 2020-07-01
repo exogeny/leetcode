@@ -1,30 +1,34 @@
 #include "solution.h"
 
-ListNode *Solution::mergeTwoLists(ListNode *l1, ListNode *l2)
+ListNode* Solution::mergeTwoLists(ListNode *l1, ListNode *l2)
 {
-    ListNode *result, *cur;
-    for (; l1 != NULL || l2 != NULL;)
+  if (!l1)
+    return l2;
+  if (!l2)
+    return l1;
+
+  ListNode dummy(0);
+  ListNode *cur = &dummy;
+
+  while (l1 != NULL && l2 != NULL)
+  {
+    if (l1->val <= l2->val)
     {
-        ListNode *node;
-        if (!l2 || (l1 && l1->val < l2->val))
-        {
-            node = new ListNode(l1->val);
-            l1 = l1->next;
-        }
-        else
-        {
-            node = new ListNode(l2->val);
-            l2 = l2->next;
-        }
-
-        if (result == NULL)
-            result = cur = node;
-        else
-        {
-            cur->next = node;
-            cur = cur->next;
-        }
+      cur->next = l1;
+      l1 = l1->next;
     }
+    else
+    {
+      cur->next = l2;
+      l2 = l2->next;
+    }
+    cur = cur->next;
+  }
 
-    return result;
+  if (l1)
+    cur->next = l1;
+  if (l2)
+    cur->next = l2;
+
+  return dummy.next;
 }
