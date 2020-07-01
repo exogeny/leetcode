@@ -10,4 +10,4 @@ struct ListNode
     ListNode(int x) : val(x), next(NULL) {}
 };
 
-#endif __LIST_H__
+#endif

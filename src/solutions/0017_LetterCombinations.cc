@@ -16,7 +16,10 @@ static void backtrack(
     int l, int r)
 {
   if (l == r)
+  {
     result.push_back(cur);
+    return;
+  }
 
   int index = (digits[l] - '1');
   for (char c : LETTER_MAP[index])
