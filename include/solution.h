@@ -858,6 +858,33 @@ public:
     double pow(double x, int n);
 
     /**
+     * 51. N-Queues
+     *
+     * The n-queens puzzle is the problem of placing n queens on an n×n
+     * chessboard such that no two queens attack each other.
+     * Given an integer n, return all distinct solutions to the n-queens puzzle.
+     *
+     * Each solution contains a distinct board configuration of the n-queens'
+     * placement, where 'Q' and '.' both indicate a queen and an empty space
+     * respectively.
+     *
+     * https://leetcode.com/problems/n-queens/
+     **/
+    std::vector<std::vector<std::string>> solveNQueens(int n);
+
+    /**
+     * 52. N-Queens II
+     *
+     * The n-queens puzzle is the problem of placing n queens on an n×n
+     * chessboard such that no two queens attack each other.
+     * Given an integer n, return the number of distinct solutions to the
+     * n-queens puzzle.
+     *
+     * https://leetcode.com/problems/n-queens-ii/
+     **/
+    int totalNQueens(int n);
+
+    /**
      * 53. Maximum Subarray
      *
      * Given an integer array nums, find the contiguous subarray (containing at
