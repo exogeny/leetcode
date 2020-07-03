@@ -902,6 +902,51 @@ public:
     int maxSubArray(std::vector<int> &nums);
 
     /**
+     * 54. Spiral Matrix
+     *
+     * Given a matrix of m x n elements (m rows, n columns), return all
+     * elements of the matrix in spiral order.
+     *
+     * https://leetcode.com/problems/spiral-matrix/
+     **/
+    std::vector<int> spiralOrder(std::vector<std::vector<int>> &matrix);
+
+    /**
+     * 55. Jump Game
+     *
+     * Given an array of non-negative integers, you are initially positioned at
+     * the first index of the array.
+     * Each element in the array represents your maximum jump length at that
+     * position. Determine if you are able to reach the last index.
+     *
+     * https://leetcode.com/problems/jump-game/
+     **/
+    bool canJump(std::vector<int> &nums);
+
+    /**
+     * 56. Merge Intervals
+     *
+     * Given a collection of intervals, merge all overlapping intervals.
+     *
+     * https://leetcode.com/problems/merge-intervals/
+     **/
+    std::vector<std::vector<int>> merge(std::vector<std::vector<int>> &nums);
+
+    /**
+     * 57. Insert Interval
+     *
+     * Given a set of non-overlapping intervals, insert a new interval into the
+     * intervals (merge if necessary).
+     * You may assume that the intervals were initially sorted according to
+     * their start times.
+     *
+     * https://leetcode.com/problems/insert-interval/
+     **/
+    std::vector<std::vector<int>> insert(
+        std::vector<std::vector<int>>& intervals,
+        std::vector<int>& newInterval);
+
+    /**
      * 58. Length of Last Word
      *
      * Given a string s consists of upper/lower-case alphabets and empty space characters ' ',

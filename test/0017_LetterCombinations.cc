@@ -9,7 +9,6 @@ namespace LeetcodeTest
     std::vector<std::string> result = Instance().letterCombinations(digits);
     std::vector<std::string> expect = \
         {"ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"};
-    printf("123\n");
     std::sort(result.begin(), result.end());
     EXPECT_EQ(expect, result);
   }
