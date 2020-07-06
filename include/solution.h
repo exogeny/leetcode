@@ -949,15 +949,67 @@ public:
     /**
      * 58. Length of Last Word
      *
-     * Given a string s consists of upper/lower-case alphabets and empty space characters ' ',
-     * return the length of last word in the string.If the last word does not exist, return 0.
+     * Given a string s consists of upper/lower-case alphabets and empty space
+     * characters ' ', return the length of last word in the string.If the last
+     * word does not exist, return 0.
      *
-     * Note: A word is defined as a character sequence consists of non-space characters only.
+     * Note: A word is defined as a character sequence consists of non-space
+     * characters only.
+     *
      * Example:
      * Input: "Hello World"
      * Output: 5
      */
     int lengthOfLastWord(std::string s);
+
+    /**
+     * 59. Spiral Matrix II
+     *
+     * Given a positive integer n, generate a square matrix filled with elements
+     * from 1 to n^2 in spiral order.
+     *
+     * https://leetcode.com/problems/spiral-matrix-ii/
+     **/
+    std::vector<std::vector<int>> generateMatrix(int n);
+
+    /**
+     * 60. Permutation Sequence
+     *
+     * The set [1,2,3,...,n] contains a total of n! unique permutations.
+     * By listing and labeling all of the permutations in order, we get the
+     * following sequence for n = 3:
+     * 123 -> 132 -> 213 -> 231 -> 312 -> 321
+     * Given n and k, return the k-th permutation sequence.
+     *
+     * Note:
+     * 1. Given n will be between 1 and 9 inclusive.
+     * 2. Given k will be between 1 and n! inclusive.
+     *
+     * https://leetcode.com/problems/permutation-sequence/
+     **/
+    std::string getPermutation(int n, int k);
+
+    /**
+     * 61. Rotate List
+     *
+     * Given a linked list, rotate the list to the right by k places, where k
+     * is non-negative.
+     *
+     * https://leetcode.com/problems/rotate-list/
+     **/
+    ListNode* rotateRight(ListNode* head, int k);
+
+    /**
+     * 62. Unique Paths
+     *
+     * A robot is located at the top-left corner of a m x n grid.
+     * The robot can only move either down or right at any point in time.
+     * The robot is trying to reach the bottom-right corner of the grid.
+     * How many possible unique paths are there?
+     *
+     * https://leetcode.com/problems/unique-paths/
+     **/
+    int uniquePaths(int m, int n);
 
     /**
      * 66. Plus One
