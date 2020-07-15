@@ -1012,6 +1012,33 @@ public:
     int uniquePaths(int m, int n);
 
     /**
+     * 63. Unique Paths II
+     *
+     * A robot is located at the top-left corner of a m x n grid (marked 'Start'
+     * in the diagram below). The robot can only move either down or right at
+     * any point in time. The robot is trying to reach the bottom-right corner
+     * of the grid (marked 'Finish' in the diagram below). Now consider if some
+     * obstacles are added to the grids. How many unique paths would there be?
+     * An obstacle and empty space is marked as 1 and 0 respectively in the
+     * grid.
+     *
+     * https://leetcode.com/problems/unique-paths-ii/
+     **/
+    int uniquePathsWithObstacles(std::vector<std::vector<int>>& obstacleGrid);
+
+    /**
+     * 64. Minimum Path Sum
+     *
+     * Given a m x n grid filled with non-negative numbers, find a path from top
+     * left to bottom right which minimizes the sum of all numbers along its
+     * path.
+     * Note: You can only move either down or right at any point in time.
+     *
+     * https://leetcode.com/problems/minimum-path-sum/
+     **/
+    int minPathSum(std::vector<std::vector<int>>& grid);
+
+    /**
      * 66. Plus One
      *
      * Given a non-empty array of digits representing a non-negative integer, plus one to the
