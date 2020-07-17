@@ -2,6 +2,9 @@
 
 using std::vector;
 
+// Runtime: 4 ms, faster than 65.24%
+// Memory Usage: 8.7 MB, less than 95.88%
+
 vector<int> Solution::plusOne(vector<int> &digits)
 {
     bool carry = true;

@@ -2,6 +2,9 @@
 
 using std::string;
 
+// Runtime: 4 ms, faster than 93.24%
+// Memory Usage: 6.2 MB, less than 93.74%
+
 string Solution::addBinary(string a, string b)
 {
     char carry = 0;

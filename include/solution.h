@@ -1039,13 +1039,32 @@ public:
     int minPathSum(std::vector<std::vector<int>>& grid);
 
     /**
+     * 65. Valid Number
+     *
+     * Validate if a given string can be interpreted as a decimal number.
+     * Note: It is intended for the problem statement to be ambiguous. You
+     * should gather all requirements up front before implementing one.
+     * However, here is a list of characters that can be in a valid decimal
+     * number:
+     *  * Numbers 0-9
+     *  * Exponent - "e"
+     *  * Positive/negative sign - "+"/"-"
+     *  * Decimal point - "."
+     * Of course, the context of these characters also matters in the input.
+     *
+     * https://leetcode.com/problems/valid-number/
+     **/
+    bool isNumber(std::string s);
+
+    /**
      * 66. Plus One
      *
-     * Given a non-empty array of digits representing a non-negative integer, plus one to the
-     * integer.
-     * The digits are stored such that the most significant digit is at the head of the list,
-     * and each element in the array contain a single digit.
-     * You may assume the integer does not contain any leading zero, except the number 0 itself.
+     * Given a non-empty array of digits representing a non-negative integer,
+     * plus one to the integer.
+     * The digits are stored such that the most significant digit is at the head
+     * of the list, and each element in the array contain a single digit.
+     * You may assume the integer does not contain any leading zero, except the
+     * number 0 itself.
      *
      * Example 1:
      * Input: [1,2,3]
@@ -1078,6 +1097,43 @@ public:
      * https://leetcode.com/problems/add-binary/description/
      */
     std::string addBinary(std::string a, std::string b);
+
+    /**
+     * 68. Text Justification
+     *
+     * Given an array of words and a width maxWidth, format the text such that
+     * each line has exactly maxWidth characters and is fully (left and right)
+     * justified. You should pack your words in a greedy approach; that is,
+     * pack as many words as you can in each line. Pad extra spaces ' ' when
+     * necessary so that each line has exactly maxWidth characters. Extra spaces
+     * between words should be distributed as evenly as possible. If the number
+     * of spaces on a line do not divide evenly between words, the empty slots
+     * on the left will be assigned more spaces than the slots on the right.
+     * For the last line of text, it should be left justified and no extra space
+     * is inserted between words.
+     * Note:
+     *  * A word is defined as a character sequence consisting of non-space
+     *  characters only.
+     *  * Each word's length is guaranteed to be greater than 0 and not exceed
+     *  maxWidth.
+     *  * The input array words contains at least one word.
+     *
+     * https://leetcode.com/problems/text-justification/
+     **/
+    std::vector<std::string> fullJustify(std::vector<std::string> &words,
+                                         int maxWidth);
+
+    /**
+     * 69. Sqrt(x)
+     *
+     * Implement int sqrt(int x). Compute and return the square root of x, where
+     * x is guaranteed to be a non-negative integer. Since the return type is an
+     * integer, the decimal digits are truncated and only the integer part of
+     * the result is returned.
+     *
+     * https://leetcode.com/problems/sqrtx/
+     **/
+    int mySqrt(int x);
 
     /**
      * 70. Climbing Stairs
