@@ -1162,6 +1162,37 @@ public:
     int climbStairs(int n);
 
     /**
+     * 71. Simplify Path
+     *
+     * Given an absolute path for a file (Unix-style), simplify it. Or in other
+     * words, convert it to the canonical path.
+     * In a UNIX-style file system, a period . refers to the current directory.
+     * Furthermore, a double period .. moves the directory up a level.
+     * Note that the returned canonical path must always begin with a slash /,
+     * and there must be only a single slash / between two directory names. The
+     * last directory name (if it exists) must not end with a trailing /. Also,
+     * the canonical path must be the shortest string representing the absolute
+     * path.
+     *
+     * https://leetcode.com/problems/simplify-path/
+     **/
+    std::string simplifyPath(std::string path);
+
+    /**
+     * 72. Edit Distance
+     *
+     * Given two words word1 and word2, find the minimum number of operations
+     * required to convert word1 to word2.
+     * You have the following 3 operations permitted on a word:
+     * 1. Insert a character
+     * 2. Delete a character
+     * 3. Replace a character
+     *
+     * https://leetcode.com/problems/edit-distance/
+     **/
+    int minDistance(std::string word1, std::string word2);
+
+    /**
      * 83. Remove Duplicates from Sorted List
      *
      * Given a sorted linked list, delete all duplicates such that each element appear only once.
