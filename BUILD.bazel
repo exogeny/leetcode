@@ -29,6 +29,24 @@ cc_library(
 )
 
 cc_library(
+  name = "leetcode-challenge",
+  srcs = glob(
+    include = [
+      "src/challenge/*.cc",
+      "include/challenge/*.h",
+    ]
+  ),
+  hdrs = glob(
+    include = [
+      "include/challenge/*.h",
+      "include/listnode.h",
+  ]),
+  includes = [
+    "include",
+  ],
+)
+
+cc_library(
   name = "leetcode-support",
   srcs = [
     "src/support.cc",
@@ -48,7 +66,7 @@ cc_test(
   size = "small",
   srcs = glob(
     include = [
-      "test/*.cc",
+      "test/main/*.cc",
       "include/test.h",
   ]),
   copts = ["-Iexternal/gtest/include"],
