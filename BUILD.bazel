@@ -32,17 +32,25 @@ cc_library(
   name = "leetcode-challenge",
   srcs = glob(
     include = [
-      "src/challenge/*.cc",
+      "src/challenge/**/*.cc",
       "include/challenge/*.h",
-    ]
+    ],
+    exclude = [
+      "include/challenge/challenge.h"
+    ],
   ),
   hdrs = glob(
     include = [
       "include/challenge/*.h",
       "include/listnode.h",
-  ]),
+    ],
+    exclude = [
+      "include/challenge/challenge.h"
+    ],
+  ),
   includes = [
     "include",
+    "include/challenge"
   ],
 )
 
@@ -74,5 +82,21 @@ cc_test(
     "@gtest//:gtest-lib",
     ":leetcode-support",
     ":leetcode-solution",
+  ],
+)
+
+cc_test(
+  name = "leetcode-challenge-test",
+  size = "small",
+  srcs = glob(
+    include = [
+      "test/challenge/**/*.cc",
+      "include/challenge/*.h",
+  ]),
+  copts = ["-Iexternal/gtest/include"],
+  deps = [
+    "@gtest//:gtest-lib",
+    ":leetcode-support",
+    ":leetcode-challenge",
   ],
 )

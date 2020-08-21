@@ -6,6 +6,7 @@
 #include <vector>
 
 #include "listnode.h"
+#include "treenode.h"
 
 /**
  * Convert the string to Integer.
@@ -54,5 +55,20 @@ void freeList(ListNode* root);
  * compare function of vectors.
  **/
 bool compare_fn(std::vector<int> &v1, std::vector<int> &v2);
+
+/**
+ * Convert binary tree to string.
+ **/
+std::string treeNodeToString(TreeNode* root);
+
+/**
+ * Build binary tree from string.
+ **/
+TreeNode* stringToTreeNode(std::string input);
+
+/**
+ * Print the binary tree.
+ **/
+void prettyPrintTree(TreeNode* node, std::string prefix, bool isLeft);
 
 #endif
