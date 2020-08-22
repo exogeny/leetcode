@@ -1,11 +1,11 @@
 #include "202008.h"
-#include "challenge.h"
+#include <gtest/gtest.h>
 #include "support.h"
-#include "treenode.h"
+#include "prototype/treenode.h"
 
 namespace ChallengeTest
 {
-  CHALLENGE_TEST(202008_17_VerticalOrderTraversal)
+  TEST(CHALLENGE, 202008_17_VerticalOrderTraversal)
   {
     std::vector<std::vector<int>> expected = \
       {

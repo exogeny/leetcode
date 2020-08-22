@@ -3,7 +3,7 @@
 
 #include <string>
 #include <vector>
-#include "treenode.h"
+#include "prototype/treenode.h"
 
 class Challenge
 {

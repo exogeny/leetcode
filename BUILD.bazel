@@ -16,13 +16,12 @@ cc_library(
   srcs = glob(
     include = [
       "src/solutions/*.cc",
-      "include/solution.h",
     ]
   ),
-  hdrs = [
+  hdrs = glob([
     "include/solution.h",
-    "include/listnode.h",
-  ],
+    "include/prototype/*.h",
+  ]),
   includes = [
     "include",
   ],
@@ -33,16 +32,12 @@ cc_library(
   srcs = glob(
     include = [
       "src/challenge/**/*.cc",
-      "include/challenge/*.h",
-    ],
-    exclude = [
-      "include/challenge/challenge.h"
     ],
   ),
   hdrs = glob(
     include = [
       "include/challenge/*.h",
-      "include/listnode.h",
+      "include/prototype/*.h",
     ],
     exclude = [
       "include/challenge/challenge.h"
@@ -58,12 +53,13 @@ cc_library(
   name = "leetcode-support",
   srcs = [
     "src/support.cc",
-    "include/support.h",
   ],
-  hdrs = [
-    "include/support.h",
-    "include/listnode.h",
-  ],
+  hdrs = glob(
+    include = [
+      "include/prototype/*.h",
+      "include/support.h"
+    ]
+  ),
   includes = [
     "include",
   ],
@@ -91,7 +87,6 @@ cc_test(
   srcs = glob(
     include = [
       "test/challenge/**/*.cc",
-      "include/challenge/*.h",
   ]),
   copts = ["-Iexternal/gtest/include"],
   deps = [

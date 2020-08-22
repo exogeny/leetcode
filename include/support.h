@@ -5,8 +5,8 @@
 #include <string>
 #include <vector>
 
-#include "listnode.h"
-#include "treenode.h"
+#include "prototype/listnode.h"
+#include "prototype/treenode.h"
 
 /**
  * Convert the string to Integer.

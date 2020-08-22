@@ -1,9 +1,9 @@
 #include "202008.h"
-#include "challenge.h"
+#include <gtest/gtest.h>
 
 namespace ChallengeTest
 {
-  CHALLENGE_TEST(202008_13_ValidPalindrome)
+  TEST(CHALLENGE, 202008_13_ValidPalindrome)
   {
     Challenge instance;
     EXPECT_TRUE(instance.isPalindrome("A man, a plan, a canal: Panama"));

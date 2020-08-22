@@ -1,9 +1,9 @@
 #include "202008.h"
-#include "challenge.h"
+#include <gtest/gtest.h>
 
 namespace ChallengeTest
 {
-  CHALLENGE_TEST(202008_12_HashSet)
+  TEST(CHALLENGE, 202008_12_HashSet)
   {
     MyHashSet hashSet;
     hashSet.add(1);

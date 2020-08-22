@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-#include "listnode.h"
+#include "prototype/listnode.h"
 
 #define MAX(i, j) ((i) > (j) ? (i) : (j))
 #define MIN(i, j) ((i) > (j) ? (j) : (i))

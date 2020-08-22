@@ -1,9 +1,9 @@
 #include "202008.h"
-#include "challenge.h"
+#include <gtest/gtest.h>
 
 namespace ChallengeTest
 {
-  CHALLENGE_TEST(202008_11_DetectCapital)
+  TEST(CHALLENGE, 202008_11_DetectCapital)
   {
     Challenge instance;
     EXPECT_TRUE(instance.detectCapitalUse("USA"));

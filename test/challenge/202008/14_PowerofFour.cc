@@ -1,9 +1,9 @@
 #include "202008.h"
-#include "challenge.h"
+#include <gtest/gtest.h>
 
 namespace ChallengeTest
 {
-  CHALLENGE_TEST(202008_14_PowerofFour)
+  TEST(CHALLENGE, 202008_14_PowerofFour)
   {
     Challenge instance;
     EXPECT_FALSE(instance.isPowerOfFour(-2147483648));
