@@ -5,7 +5,7 @@ namespace ChallengeTest
 {
   TEST(CHALLENGE, 202008_12_HashSet)
   {
-    MyHashSet hashSet;
+    Challenge::MyHashSet hashSet;
     hashSet.add(1);
     hashSet.add(2);
     EXPECT_TRUE(hashSet.contains(1));   // returns true

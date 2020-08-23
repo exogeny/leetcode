@@ -25,6 +25,46 @@ public:
   bool detectCapitalUse(std::string word);
 
   /**
+   * 2. Design HashSet
+   *
+   * Design a HashSet without using any built-in hash table libraries.
+   * To be specific, your design should include these functions:
+   *  * add(value): Insert a value into the HashSet.
+   *  * contains(value) : Return whether the value exists in the HashSet or not.
+   *  * remove(value): Remove a value in the HashSet. If the value does not
+   *    exist in the HashSet, do nothing.
+   **/
+  class MyHashSet {
+  private:
+    struct HashNode
+    {
+      int _v;
+      HashNode *_next;
+      HashNode(int p)
+        :_next(NULL), _v(p)
+      { }
+    };
+
+    std::vector<HashNode*> _table;
+    size_t _size;
+
+    int _getIndex(int key);
+    void _checkCapacity();
+  public:
+    MyHashSet();
+    MyHashSet(size_t size);
+    ~MyHashSet();
+
+    void add(int key);
+    void remove(int key);
+
+    /**
+     * Returns true if this set contains the specified element.
+     **/
+    bool contains(int key);
+  };
+
+  /**
    * 3. Valid Palindrome
    *
    * Given a string, determine if it is a palindrome, considering only
@@ -43,6 +83,37 @@ public:
    * Follow up: Could you solve it without loops/recursion?
    **/
   bool isPowerOfFour(int num);
+
+  /**
+   * 5. Add and Search Word - Data structure design
+   *
+   * You should design a data structure that supports adding new words and
+   * finding if a string matches any previously added string.
+   * Implement the WordDictionary class:
+   *  * WordDictionary() Initializes the object.
+   *  * void addWord(word) adds word to the data structure, it can be matched
+   *    later.
+   *  * bool search(word) returns true if there is any string in the data
+   *    structure that matches word or false otherwise. word may contain
+   *    dots '.' where dots can be matched with any letter.
+   **/
+  class WordDictionary
+  {
+  private:
+    struct WordNode
+    {
+      bool endding;
+      WordNode *children[26];
+    };
+
+    WordNode *root;
+    bool searchNode(const std::string &word, size_t index, WordNode *node);
+  public:
+    WordDictionary();
+    ~WordDictionary();
+    void addWord(std::string word);
+    bool search(std::string word);
+  };
 
   /**
    * 6. Find All Duplicates in an Array
@@ -68,46 +139,6 @@ public:
    * coordinate.  Every report will have a list of values of nodes.
    **/
   std::vector<std::vector<int>> verticalTraversal(TreeNode* root);
-};
-
-/**
- * 2. Design HashSet
- *
- * Design a HashSet without using any built-in hash table libraries.
- * To be specific, your design should include these functions:
- *  * add(value): Insert a value into the HashSet.
- *  * contains(value) : Return whether the value exists in the HashSet or not.
- *  * remove(value): Remove a value in the HashSet. If the value does not
- *    exist in the HashSet, do nothing.
- **/
-struct HashNode
-{
-  int _v;
-  HashNode *_next;
-  HashNode(int p)
-    :_next(NULL), _v(p)
-  { }
-};
-
-class MyHashSet {
-private:
-  std::vector<HashNode*> _table;
-  size_t _size;
-
-  int _getIndex(int key);
-  void _checkCapacity();
-public:
-  MyHashSet();
-  MyHashSet(size_t size);
-  ~MyHashSet();
-
-  void add(int key);
-  void remove(int key);
-
-  /**
-   * Returns true if this set contains the specified element.
-   **/
-  bool contains(int key);
 };
 
 #endif

@@ -18,7 +18,7 @@ static size_t getNext(size_t size)
   return 0;
 }
 
-void MyHashSet::_checkCapacity()
+void Challenge::MyHashSet::_checkCapacity()
 {
   MyHashSet hs(getNext(_table.size()));
 
@@ -35,22 +35,22 @@ void MyHashSet::_checkCapacity()
   _table.swap(hs._table);
 }
 
-int MyHashSet::_getIndex(int key)
+int Challenge::MyHashSet::_getIndex(int key)
 {
   return key % _table.size();
 }
 
-MyHashSet::MyHashSet()
+Challenge::MyHashSet::MyHashSet()
   : MyHashSet(getNext(0))
 { }
 
-MyHashSet::MyHashSet(size_t size)
+Challenge::MyHashSet::MyHashSet(size_t size)
   : _size(size)
 {
   _table.resize(size);
 }
 
-MyHashSet::~MyHashSet()
+Challenge::MyHashSet::~MyHashSet()
 {
   HashNode *pre;
   for (HashNode *cur : _table)
@@ -64,7 +64,7 @@ MyHashSet::~MyHashSet()
   }
 }
 
-void MyHashSet::add(int key)
+void Challenge::MyHashSet::add(int key)
 {
   if (contains(key))
     return;
@@ -82,7 +82,7 @@ void MyHashSet::add(int key)
   ++_size;
 }
 
-void MyHashSet::remove(int key)
+void Challenge::MyHashSet::remove(int key)
 {
   size_t index = _getIndex(key);
   HashNode *cur = _table[index];
@@ -103,7 +103,7 @@ void MyHashSet::remove(int key)
   }
 }
 
-bool MyHashSet::contains(int key)
+bool Challenge::MyHashSet::contains(int key)
 {
   size_t index = _getIndex(key);
   HashNode *cur = _table[index];
