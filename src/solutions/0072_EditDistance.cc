@@ -1,4 +1,5 @@
 #include "solution.h"
+#include <algorithm>
 
 using std::string;
 using std::vector;
@@ -31,8 +32,8 @@ int Solution::minDistance(std::string word1, std::string word2)
       else
       {
         distances[i][j] = 1 + \
-            min(distances[i - 1][j - 1], \
-                min(distances[i - 1][j], distances[i][j - 1]));;
+            std::min(distances[i - 1][j - 1], \
+                std::min(distances[i - 1][j], distances[i][j - 1]));;
       }
     }
   }

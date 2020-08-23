@@ -1,4 +1,5 @@
 #include "solution.h"
+#include <algorithm>
 
 using std::string;
 using std::vector;
@@ -48,7 +49,7 @@ string Solution::longestPalindrome(string s)
   int mx = 0, id = 0, res_length = 0, res_center = 0;
   for (int i = 1; i < t.size(); i++)
   {
-    p[i] = mx > i ? min(p[2 * id - i], mx - i) : 1;
+    p[i] = mx > i ? std::min(p[2 * id - i], mx - i) : 1;
     while (t[i + p[i]] == t[i - p[i]])
       ++p[i];
 

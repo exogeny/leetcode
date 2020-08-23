@@ -1,4 +1,5 @@
 #include "solution.h"
+#include <algorithm>
 
 using std::vector;
 
@@ -36,7 +37,7 @@ double Solution::findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2)
       else if (j == 0)
         maxLeft = A[i - 1];
       else
-        maxLeft = max(A[i - 1], B[j - 1]);
+        maxLeft = std::max(A[i - 1], B[j - 1]);
       if ((m + n) % 2 == 1)
         return maxLeft;
 
@@ -46,7 +47,7 @@ double Solution::findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2)
       else if (j == n)
         minRight = A[i];
       else
-        minRight = min(B[j], A[i]);
+        minRight = std::min(B[j], A[i]);
 
       return (maxLeft + minRight) / 2.0;
     }

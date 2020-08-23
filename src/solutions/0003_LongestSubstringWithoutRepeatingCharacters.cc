@@ -1,4 +1,5 @@
 #include "solution.h"
+#include <algorithm>
 
 using std::string;
 
@@ -9,8 +10,8 @@ int Solution::lengthOfLongestSubstring(string s)
   for (i = 0, j = 0; j < len; j++)
   {
     tmp = (int)s[j];
-    i = max(index[tmp], i);
-    result = max(result, j - i + 1);
+    i = std::max(index[tmp], i);
+    result = std::max(result, j - i + 1);
     index[tmp] = j + 1;
   }
   delete[] index;
