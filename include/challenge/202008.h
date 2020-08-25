@@ -153,6 +153,14 @@ public:
    * -1,000,000 to 1,000,000.
    **/
   int pathSum(TreeNode* root, int sum);
+
+  /**
+   * 3. Excel Sheet Column Number
+   *
+   * Given a column title as appear in an Excel sheet, return its corresponding
+   * column number.
+   **/
+  int titleToNumber(std::string s);
 };
 
 #endif

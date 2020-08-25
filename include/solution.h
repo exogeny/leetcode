@@ -1171,6 +1171,49 @@ public:
   int minDistance(std::string word1, std::string word2);
 
   /**
+   * 73. Set Matrix Zeroes
+   *
+   * Given an m x n matrix. If an element is 0, set its entire row and column
+   * to 0. Do it in-place.
+   * Follow up:
+   * 1. A straight forward solution using O(mn) space is probably a bad idea.
+   * 2. A simple improvement uses O(m + n) space, but still not the best
+   *    solution.
+   * 3. Could you devise a constant space solution?
+   *
+   * https://leetcode.com/problems/set-matrix-zeroes/
+   **/
+  void setZeroes(std::vector<std::vector<int>> &matrix);
+
+  /**
+   * 74. Search a 2D Matrix
+   *
+   * Write an efficient algorithm that searches for a value in an m x n matrix.
+   * This matrix has the following properties:
+   *  * Integers in each row are sorted from left to right.
+   *  * The first integer of each row is greater than the last integer of the
+   *    previous row.
+   *
+   * https://leetcode.com/problems/search-a-2d-matrix/
+   **/
+  bool searchMatrix(std::vector<std::vector<int>> &matrix, int target);
+
+  /**
+   * 75. Sort Colors
+   *
+   * Given an array with n objects colored red, white or blue, sort them
+   * in-place so that objects of the same color are adjacent, with the colors
+   * in the order red, white and blue.
+   * Here, we will use the integers 0, 1, and 2 to represent the color red,
+   * white, and blue respectively.
+   * Note: You are not suppose to use the library's sort function for this
+   * problem.
+   *
+   * https://leetcode.com/problems/sort-colors/
+   **/
+  void sortColors(std::vector<int> &nums);
+
+  /**
    * 83. Remove Duplicates from Sorted List
    *
    * Given a sorted linked list, delete all duplicates such that each element
